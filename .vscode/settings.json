@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "usart.h": "c",
+        "odometry.h": "c"
+    }
+}

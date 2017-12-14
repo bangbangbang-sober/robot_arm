@@ -192,8 +192,8 @@ int TIM3_Configuration(void)
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up; 
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);              
                  
-//	TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_BothEdge ,TIM_ICPolarity_BothEdge);
- TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);
+	//TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_BothEdge ,TIM_ICPolarity_BothEdge);
+	TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);
 	TIM_ICStructInit(&TIM_ICInitStructure);
 	TIM_ICInitStructure.TIM_ICFilter = 6; 
 	TIM_ICInit(TIM3, &TIM_ICInitStructure);
@@ -202,7 +202,7 @@ int TIM3_Configuration(void)
 	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 	
 	//Reset counter
-//	TIM3->CNT = 0;
+	//TIM3->CNT = 0;
 
 	TIM_Cmd(TIM3, ENABLE); 
 
@@ -242,8 +242,8 @@ int TIM4_Configuration(void)
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up; 
 	TIM_TimeBaseInit(TIM4, &TIM_TimeBaseStructure);              
                  
-//	TIM_EncoderInterfaceConfig(TIM4, TIM_EncoderMode_TI12, TIM_ICPolarity_BothEdge ,TIM_ICPolarity_BothEdge);
-  TIM_EncoderInterfaceConfig(TIM4, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);
+	//TIM_EncoderInterfaceConfig(TIM4, TIM_EncoderMode_TI12, TIM_ICPolarity_BothEdge ,TIM_ICPolarity_BothEdge);
+	TIM_EncoderInterfaceConfig(TIM4, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);
 	TIM_ICStructInit(&TIM_ICInitStructure);
 	TIM_ICInitStructure.TIM_ICFilter = 6; 
 	TIM_ICInit(TIM4, &TIM_ICInitStructure);
@@ -251,7 +251,7 @@ int TIM4_Configuration(void)
 	TIM_ClearFlag(TIM4, TIM_FLAG_Update);
 	TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);
 	
-	//Reset counter
+//	//Reset counter
 //	TIM4->CNT = 0;
 //	TIM4->CCER|=1<<1;   //反向
 
@@ -284,11 +284,11 @@ int TIM6_Configuration(void)
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM6,ENABLE);
 
 	TIM_DeInit(TIM6);																					//复位定时器
-	TIM_TimeBaseStructure.TIM_Period = 4000;								//定时器初始值	 72000000/9/4000 = 2000Hz 
-	TIM_TimeBaseStructure.TIM_Prescaler=(9-1);							//时钟预分频
+	TIM_TimeBaseStructure.TIM_Period = 4000;									//定时器初始值	 72000000/9/4000 = 2000Hz 
+	TIM_TimeBaseStructure.TIM_Prescaler=(9-1);								//时钟预分频
 	
-//	TIM_TimeBaseStructure.TIM_Period = 2000;									//定时器初始值	 200 == 10Hz == 100ms
-//	TIM_TimeBaseStructure.TIM_Prescaler=(36000 - 1);					//时钟预分频
+//	TIM_TimeBaseStructure.TIM_Period = 2000;								//定时器初始值	 200 == 10Hz == 100ms
+//	TIM_TimeBaseStructure.TIM_Prescaler=(36000 - 1);				//时钟预分频
 	TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1;			//时钟分割
 	TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up;	//向上计数模式
 	TIM_TimeBaseInit(TIM6,&TIM_TimeBaseStructure);						//初始化定时器的值

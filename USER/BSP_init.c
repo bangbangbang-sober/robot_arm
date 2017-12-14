@@ -237,10 +237,13 @@ void BSP_Configuration(void)
 	Set_USBClock(); 							//Set USB Clock
 	USB_Init(); 									//USB Init	
 	USB_Interrupts_Config();			//USB Interrupt Config
+
 	
 	NVIC_Configuration();					//中断优先级配置
 	GPIO_Configuration();					//电机方向控制引脚配置
-//	UART_Configuration(115200);		//串口初始化为115200
+
+//  UART_Configuration(115200);		//串口初始化为115200
+	
 	delay_init();	    	 					//延时函数初始化	
 	TIM_Configuration();					//定时器初始化
 }

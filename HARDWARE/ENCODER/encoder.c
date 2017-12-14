@@ -77,6 +77,7 @@ s16 ENC_Calc_Rot_Speed2(void)//计算电机A的编码数
 }
 
 
+//NOTE:线接反
 s16 ENC_Calc_Rot_Speed1(void)//计算电机B的编码数
 {   
     s32 wDelta_angle;

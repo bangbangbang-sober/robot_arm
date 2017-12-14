@@ -9,6 +9,11 @@
 
 #include "odometry.h"
 
+
+#include "usbio.h"
+#include "us_can_zyt.h"
+#include "us_mcu_transfer.h"
+
 /***************************************************************************************************/
 
 extern s32 hSpeed_Buffer1[],hSpeed_Buffer2[];							//左右轮速度缓存数组
@@ -181,26 +186,28 @@ void TIM4_IRQHandler(void)
 }
 */
 int ROBOT_ENCODER_EN = 0;
+extern float pi;          //π
 extern float position_x,position_y,oriention;         //计算得到位置坐标和方向角
 void TIM5_IRQHandler(void)
-{
+{	
 	//young
 	if( TIM_GetITStatus(TIM5 , TIM_IT_Update) != RESET ) 
 	{
-		if(ROBOT_ENCODER_EN == 1){		
-			
-			sjs_robot_encoder_send(SJS_ROBOT_ENCODER, (int)position_x, (int)position_y, (int)oriention, timer);
-			
+		odometry(Milemeter_R_Motor,Milemeter_L_Motor);//计算里程计
+		if(ROBOT_ENCODER_EN == 1){
+			sjs_robot_encoder_send(SJS_ROBOT_ENCODER, (int)position_x , (int)position_y, (int)((oriention * (180/pi))*100), timer);			
 		}
+
 		TIM_ClearITPendingBit(TIM5 , TIM_IT_Update);
 	}
 	
 //	TIM_ClearITPendingBit(TIM5 , TIM_IT_Update);
 }
 
+
+
 void TIM6_IRQHandler(void)
-{
-	
+{	
 	//young
 	if( TIM_GetITStatus(TIM6 , TIM_IT_Update) != RESET ) 
 	{
@@ -226,7 +233,7 @@ void TIM6_IRQHandler(void)
 				//储存编码数（脉冲数），用于里程计计算
 				Milemeter_L_Motor= (float)wtemp1; //储存脉冲数
 				Milemeter_R_Motor= (float)wtemp2;
-			
+				
 //				printf("wtemp2 = %d , wtemp1 = %d \r\n",wtemp2, wtemp1);
 				
 				main_sta|=0x02;//执行计算里程计数据步骤
@@ -250,8 +257,7 @@ void TIM6_IRQHandler(void)
 				Gain2(); //电机A转速PID调节控制 右
 				Gain1(); //电机B转速PID调节控制 左
     }
-#endif
-        
+ #endif      
 		TIM_ClearITPendingBit(TIM6 , TIM_FLAG_Update);//清除中断标志位    
 	}
 }

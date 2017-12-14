@@ -127,7 +127,7 @@
 
 
 /*CAR INFO*/
-#define US_BACK_CAR						0xC1
+#define US_BACK_CAR								0xC1
 #define US_TIRE_CORNER_INFO				0xC2
 
 /*ID CODER*/

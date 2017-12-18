@@ -1,10 +1,10 @@
 ..\obj\us_can_zyt.o: ..\FUNCTION\us_can_zyt.c
-..\obj\us_can_zyt.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-..\obj\us_can_zyt.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+..\obj\us_can_zyt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\us_can_zyt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
 ..\obj\us_can_zyt.o: ..\FUNCTION\us_mcu_transfer.h
 ..\obj\us_can_zyt.o: ..\USER\stm32f10x.h
 ..\obj\us_can_zyt.o: ..\CORE\core_cm3.h
-..\obj\us_can_zyt.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\us_can_zyt.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\us_can_zyt.o: ..\USER\system_stm32f10x.h
 ..\obj\us_can_zyt.o: ..\USER\stm32f10x_conf.h
 ..\obj\us_can_zyt.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

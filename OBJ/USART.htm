@@ -3,11 +3,11 @@
 <title>Static Call Graph - [..\OBJ\USART.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\USART.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Thu Dec 14 16:22:34 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Mon Dec 18 10:02:11 2017
 <BR><P>
-<H3>Maximum Stack Usage =        328 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        320 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-TIM5_IRQHandler &rArr; odometry &rArr; sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+TIM6_IRQHandler &rArr; odometry &rArr; sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 <P>
 <H3>
 Mutually Recursive functions
@@ -25,9 +25,9 @@ Function Pointers
  <LI><a href="#[8]">CustomHID_Data_Setup</a> from usb_prop.o(.text) referenced 2 times from usb_prop.o(.data)
  <LI><a href="#[c]">CustomHID_GetConfigDescriptor</a> from usb_prop.o(.text) referenced 2 times from usb_prop.o(.data)
  <LI><a href="#[b]">CustomHID_GetDeviceDescriptor</a> from usb_prop.o(.text) referenced 2 times from usb_prop.o(.data)
- <LI><a href="#[14f]">CustomHID_GetHIDDescriptor</a> from usb_prop.o(.text) referenced from usb_prop.o(.text)
- <LI><a href="#[152]">CustomHID_GetProtocolValue</a> from usb_prop.o(.text) referenced from usb_prop.o(.text)
- <LI><a href="#[151]">CustomHID_GetReportDescriptor</a> from usb_prop.o(.text) referenced from usb_prop.o(.text)
+ <LI><a href="#[150]">CustomHID_GetHIDDescriptor</a> from usb_prop.o(.text) referenced from usb_prop.o(.text)
+ <LI><a href="#[153]">CustomHID_GetProtocolValue</a> from usb_prop.o(.text) referenced from usb_prop.o(.text)
+ <LI><a href="#[152]">CustomHID_GetReportDescriptor</a> from usb_prop.o(.text) referenced from usb_prop.o(.text)
  <LI><a href="#[d]">CustomHID_GetStringDescriptor</a> from usb_prop.o(.text) referenced 2 times from usb_prop.o(.data)
  <LI><a href="#[a]">CustomHID_Get_Interface_Setting</a> from usb_prop.o(.text) referenced 2 times from usb_prop.o(.data)
  <LI><a href="#[9]">CustomHID_NoData_Setup</a> from usb_prop.o(.text) referenced 2 times from usb_prop.o(.data)
@@ -80,9 +80,9 @@ Function Pointers
  <LI><a href="#[3e]">SPI2_IRQHandler</a> from startup_stm32f10x_hd.o(.text) referenced from startup_stm32f10x_hd.o(RESET)
  <LI><a href="#[4d]">SPI3_IRQHandler</a> from startup_stm32f10x_hd.o(.text) referenced from startup_stm32f10x_hd.o(RESET)
  <LI><a href="#[16]">SVC_Handler</a> from stm32f10x_it.o(.text) referenced from startup_stm32f10x_hd.o(RESET)
- <LI><a href="#[138]">Standard_GetConfiguration</a> from usb_core.o(.text) referenced from usb_core.o(.text)
- <LI><a href="#[139]">Standard_GetInterface</a> from usb_core.o(.text) referenced from usb_core.o(.text)
- <LI><a href="#[137]">Standard_GetStatus</a> from usb_core.o(.text) referenced 3 times from usb_core.o(.text)
+ <LI><a href="#[139]">Standard_GetConfiguration</a> from usb_core.o(.text) referenced from usb_core.o(.text)
+ <LI><a href="#[13a]">Standard_GetInterface</a> from usb_core.o(.text) referenced from usb_core.o(.text)
+ <LI><a href="#[138]">Standard_GetStatus</a> from usb_core.o(.text) referenced 3 times from usb_core.o(.text)
  <LI><a href="#[19]">SysTick_Handler</a> from stm32f10x_it.o(.text) referenced from startup_stm32f10x_hd.o(RESET)
  <LI><a href="#[57]">SystemInit</a> from system_stm32f10x.o(.text) referenced from startup_stm32f10x_hd.o(.text)
  <LI><a href="#[1c]">TAMPER_IRQHandler</a> from startup_stm32f10x_hd.o(.text) referenced from startup_stm32f10x_hd.o(RESET)
@@ -294,16 +294,16 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
 </UL>
-<BR>[Called By]<UL><LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PowerOff
-<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PowerOn
+<BR>[Called By]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PowerOff
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PowerOn
 </UL>
 
-<P><STRONG><a name="[155]"></a>Enter_LowPowerMode</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, bsp_init.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Suspend
+<P><STRONG><a name="[156]"></a>Enter_LowPowerMode</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, bsp_init.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Suspend
 </UL>
 
-<P><STRONG><a name="[157]"></a>Leave_LowPowerMode</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, bsp_init.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume_Init
+<P><STRONG><a name="[158]"></a>Leave_LowPowerMode</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, bsp_init.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume_Init
 </UL>
 
 <P><STRONG><a name="[8c]"></a>IIC_Init</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, myiic.o(.text), UNUSED)
@@ -590,13 +590,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Configuration
 </UL>
 
-<P><STRONG><a name="[125]"></a>ENC_Calc_Rot_Speed2</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, encoder.o(.text))
+<P><STRONG><a name="[124]"></a>ENC_Calc_Rot_Speed2</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, encoder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ENC_Calc_Rot_Speed2
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM6_IRQHandler
 </UL>
 
-<P><STRONG><a name="[126]"></a>ENC_Calc_Rot_Speed1</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, encoder.o(.text))
+<P><STRONG><a name="[125]"></a>ENC_Calc_Rot_Speed1</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, encoder.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ENC_Calc_Rot_Speed1
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM6_IRQHandler
@@ -1927,28 +1927,28 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
-<P><STRONG><a name="[4c]"></a>TIM5_IRQHandler</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, timer_interrupt.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = TIM5_IRQHandler &rArr; odometry &rArr; sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[4c]"></a>TIM5_IRQHandler</STRONG> (Thumb, 112 bytes, Stack size 40 bytes, timer_interrupt.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = TIM5_IRQHandler &rArr; sjs_robot_encoder_send &rArr; us_mcu_rc_buff_enter
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_encoder_send
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
-<P><STRONG><a name="[50]"></a>TIM6_IRQHandler</STRONG> (Thumb, 148 bytes, Stack size 16 bytes, timer_interrupt.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = TIM6_IRQHandler &rArr; ENC_Calc_Average_Speed &rArr; __aeabi_ldivmod &rArr; __aeabi_uldivmod
+<P><STRONG><a name="[50]"></a>TIM6_IRQHandler</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, timer_interrupt.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 320<LI>Call Chain = TIM6_IRQHandler &rArr; odometry &rArr; sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain2
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Average_Speed
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Rot_Speed1
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Rot_Speed2
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Rot_Speed1
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Rot_Speed2
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
 </UL>
@@ -1963,133 +1963,135 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain2
 </UL>
 
-<P><STRONG><a name="[122]"></a>odometry</STRONG> (Thumb, 480 bytes, Stack size 32 bytes, odometry.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = odometry &rArr; sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[126]"></a>odometry</STRONG> (Thumb, 546 bytes, Stack size 48 bytes, odometry.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = odometry &rArr; sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM6_IRQHandler
 </UL>
 
-<P><STRONG><a name="[138]"></a>Standard_GetConfiguration</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[139]"></a>Standard_GetConfiguration</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_GetConfiguration
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_core.o(.text)
 </UL>
-<P><STRONG><a name="[133]"></a>Standard_SetConfiguration</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[134]"></a>Standard_SetConfiguration</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_SetConfiguration
 </UL>
-<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
 </UL>
 
-<P><STRONG><a name="[139]"></a>Standard_GetInterface</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[13a]"></a>Standard_GetInterface</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_GetInterface
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_core.o(.text)
 </UL>
-<P><STRONG><a name="[135]"></a>Standard_SetInterface</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[136]"></a>Standard_SetInterface</STRONG> (Thumb, 96 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_SetInterface
 </UL>
-<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
 </UL>
 
-<P><STRONG><a name="[137]"></a>Standard_GetStatus</STRONG> (Thumb, 238 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[138]"></a>Standard_GetStatus</STRONG> (Thumb, 238 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_GetStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_core.o(.text)
 </UL>
-<P><STRONG><a name="[129]"></a>Standard_ClearFeature</STRONG> (Thumb, 342 bytes, Stack size 32 bytes, usb_core.o(.text))
+<P><STRONG><a name="[12a]"></a>Standard_ClearFeature</STRONG> (Thumb, 342 bytes, Stack size 32 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = Standard_ClearFeature &rArr; SetEPTxStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxStatus
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearDTOG_TX
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearDTOG_RX
+<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxStatus
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearDTOG_TX
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearDTOG_RX
 </UL>
-<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
 </UL>
 
-<P><STRONG><a name="[136]"></a>Standard_SetEndPointFeature</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, usb_core.o(.text))
+<P><STRONG><a name="[137]"></a>Standard_SetEndPointFeature</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Standard_SetEndPointFeature
 </UL>
-<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
 </UL>
 
-<P><STRONG><a name="[134]"></a>Standard_SetDeviceFeature</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[135]"></a>Standard_SetDeviceFeature</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_SetDeviceFeature
 </UL>
-<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
 </UL>
 
-<P><STRONG><a name="[150]"></a>Standard_GetDescriptorData</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[151]"></a>Standard_GetDescriptorData</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Standard_GetDescriptorData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetStringDescriptor
 <LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetConfigDescriptor
 <LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetDeviceDescriptor
-<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetReportDescriptor
-<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetHIDDescriptor
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetReportDescriptor
+<LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_GetHIDDescriptor
 </UL>
 
-<P><STRONG><a name="[13b]"></a>Post0_Process</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[13c]"></a>Post0_Process</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Post0_Process &rArr; SetEPRxCount
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
+<BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
 </UL>
-<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
-<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
-<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
+<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
 </UL>
 
-<P><STRONG><a name="[13c]"></a>Setup0_Process</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, usb_core.o(.text))
+<P><STRONG><a name="[13d]"></a>Setup0_Process</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = Setup0_Process &rArr; Data_Setup0 &rArr; DataStageIn &rArr; UserToPMABufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ByteSwap
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Setup0
-<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
+<BR>[Calls]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ByteSwap
+<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Setup0
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NoData_Setup0
 </UL>
-<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
 </UL>
 
-<P><STRONG><a name="[13f]"></a>SetDeviceAddress</STRONG> (Thumb, 70 bytes, Stack size 12 bytes, usb_core.o(.text))
+<P><STRONG><a name="[140]"></a>SetDeviceAddress</STRONG> (Thumb, 70 bytes, Stack size 12 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetDeviceAddress
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
-<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
 </UL>
 
-<P><STRONG><a name="[13e]"></a>In0_Process</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[13f]"></a>In0_Process</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = In0_Process &rArr; DataStageIn &rArr; UserToPMABufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDeviceAddress
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<BR>[Calls]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDeviceAddress
+<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
 </UL>
 
-<P><STRONG><a name="[140]"></a>Out0_Process</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, usb_core.o(.text))
+<P><STRONG><a name="[141]"></a>Out0_Process</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = Out0_Process &rArr; DataStageOut &rArr; PMAToUserBufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
+<BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
 </UL>
-<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
+<BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
 </UL>
 
 <P><STRONG><a name="[2]"></a>NOP_Process</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, usb_core.o(.text))
@@ -2102,12 +2104,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Configuration
 </UL>
 
-<P><STRONG><a name="[141]"></a>CTR_LP</STRONG> (Thumb, 616 bytes, Stack size 8 bytes, usb_int.o(.text))
+<P><STRONG><a name="[142]"></a>CTR_LP</STRONG> (Thumb, 616 bytes, Stack size 8 bytes, usb_int.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = CTR_LP &rArr; Setup0_Process &rArr; Data_Setup0 &rArr; DataStageIn &rArr; UserToPMABufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
-<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
-<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
+<BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Istr
 </UL>
@@ -2119,15 +2121,15 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SendData
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
 </UL>
 
 <P><STRONG><a name="[116]"></a>PMAToUserBufferCopy</STRONG> (Thumb, 34 bytes, Stack size 20 bytes, usb_mem.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = PMAToUserBufferCopy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
+<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
 </UL>
 
 <P><STRONG><a name="[220]"></a>SetCNTR</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
@@ -2144,7 +2146,7 @@ Global Symbols
 
 <P><STRONG><a name="[226]"></a>GetDADDR</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[149]"></a>SetBTABLE</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[14a]"></a>SetBTABLE</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, usb_regs.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
 </UL>
 
@@ -2152,11 +2154,11 @@ Global Symbols
 
 <P><STRONG><a name="[228]"></a>SetENDPOINT</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[143]"></a>GetENDPOINT</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDouBleBuffEPStall
+<P><STRONG><a name="[144]"></a>GetENDPOINT</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDouBleBuffEPStall
 </UL>
 
-<P><STRONG><a name="[14a]"></a>SetEPType</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[14b]"></a>SetEPType</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SetEPType
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
@@ -2164,11 +2166,11 @@ Global Symbols
 
 <P><STRONG><a name="[229]"></a>GetEPType</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[12b]"></a>SetEPTxStatus</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[12c]"></a>SetEPTxStatus</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetEPTxStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
 </UL>
 
 <P><STRONG><a name="[117]"></a>SetEPRxStatus</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, usb_regs.o(.text))
@@ -2178,8 +2180,8 @@ Global Symbols
 <LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
 </UL>
 
-<P><STRONG><a name="[142]"></a>SetDouBleBuffEPStall</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, usb_regs.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetENDPOINT
+<P><STRONG><a name="[143]"></a>SetDouBleBuffEPStall</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, usb_regs.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetENDPOINT
 </UL>
 
 <P><STRONG><a name="[5e]"></a>GetEPTxStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, usb_regs.o(.text))
@@ -2194,7 +2196,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SendData
 </UL>
 
-<P><STRONG><a name="[14e]"></a>SetEPRxValid</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[14f]"></a>SetEPRxValid</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SetEPRxValid
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
@@ -2204,7 +2206,7 @@ Global Symbols
 
 <P><STRONG><a name="[22c]"></a>ClearEP_KIND</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[14d]"></a>Clear_Status_Out</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[14e]"></a>Clear_Status_Out</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, usb_regs.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
 </UL>
 
@@ -2226,62 +2228,62 @@ Global Symbols
 
 <P><STRONG><a name="[235]"></a>ToggleDTOG_TX</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[12d]"></a>ClearDTOG_RX</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, usb_regs.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
+<P><STRONG><a name="[12e]"></a>ClearDTOG_RX</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
 </UL>
 
-<P><STRONG><a name="[12a]"></a>ClearDTOG_TX</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, usb_regs.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
+<P><STRONG><a name="[12b]"></a>ClearDTOG_TX</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
 </UL>
 
 <P><STRONG><a name="[236]"></a>SetEPAddress</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, usb_regs.o(.text), UNUSED)
 
 <P><STRONG><a name="[237]"></a>GetEPAddress</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[14c]"></a>SetEPTxAddr</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[14d]"></a>SetEPTxAddr</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SetEPTxAddr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
 </UL>
 
-<P><STRONG><a name="[14b]"></a>SetEPRxAddr</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[14c]"></a>SetEPRxAddr</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SetEPRxAddr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
 </UL>
 
-<P><STRONG><a name="[131]"></a>GetEPTxAddr</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[132]"></a>GetEPTxAddr</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, usb_regs.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
 </UL>
 
-<P><STRONG><a name="[12f]"></a>GetEPRxAddr</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, usb_regs.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
+<P><STRONG><a name="[130]"></a>GetEPRxAddr</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
 </UL>
 
 <P><STRONG><a name="[119]"></a>SetEPTxCount</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, usb_regs.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SendData
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
 <LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
 </UL>
 
 <P><STRONG><a name="[238]"></a>SetEPCountRxReg</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[12c]"></a>SetEPRxCount</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, usb_regs.o(.text))
+<P><STRONG><a name="[12d]"></a>SetEPRxCount</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SetEPRxCount
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
+<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Post0_Process
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
 </UL>
 
 <P><STRONG><a name="[239]"></a>GetEPTxCount</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[145]"></a>GetEPRxCount</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
+<P><STRONG><a name="[146]"></a>GetEPRxCount</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
 </UL>
 
 <P><STRONG><a name="[23a]"></a>SetEPDblBuffAddr</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, usb_regs.o(.text), UNUSED)
@@ -2310,26 +2312,26 @@ Global Symbols
 
 <P><STRONG><a name="[246]"></a>ToWord</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
 
-<P><STRONG><a name="[13d]"></a>ByteSwap</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, usb_regs.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
+<P><STRONG><a name="[13e]"></a>ByteSwap</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, usb_regs.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
 </UL>
 
-<P><STRONG><a name="[148]"></a>USB_SIL_Init</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, usb_sil.o(.text))
+<P><STRONG><a name="[149]"></a>USB_SIL_Init</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, usb_sil.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_init
 </UL>
 
 <P><STRONG><a name="[ff]"></a>USB_SIL_Write</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usb_sil.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserToPMABufferCopy
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
-<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_usb_send
 </UL>
 
-<P><STRONG><a name="[144]"></a>USB_SIL_Read</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usb_sil.o(.text), UNUSED)
+<P><STRONG><a name="[145]"></a>USB_SIL_Read</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usb_sil.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMAToUserBufferCopy
-<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxCount
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
+<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxCount
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
 </UL>
 
 <P><STRONG><a name="[0]"></a>EP1_IN_Callback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, usb_endp.o(.text))
@@ -2349,8 +2351,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = USB_Istr &rArr; CTR_LP &rArr; Setup0_Process &rArr; Data_Setup0 &rArr; DataStageIn &rArr; UserToPMABufferCopy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume
-<LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Suspend
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
+<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Suspend
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTR_LP
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_LP_CAN1_RX0_IRQHandler
 </UL>
@@ -2359,8 +2361,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = CustomHID_init &rArr; Get_SerialNum &rArr; IntToUnicode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_SerialNum
-<LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PowerOn
-<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Init
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PowerOn
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
@@ -2369,15 +2371,15 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxStatus
-<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxAddr
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxAddr
-<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clear_Status_Out
-<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxValid
-<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPType
-<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBTABLE
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxStatus
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDeviceAddress
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxAddr
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxAddr
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clear_Status_Out
+<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxValid
+<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPType
+<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBTABLE
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxStatus
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDeviceAddress
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
@@ -2393,20 +2395,20 @@ Global Symbols
 <P><STRONG><a name="[7]"></a>CustomHID_Status_Out</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, usb_prop.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
-<P><STRONG><a name="[152]"></a>CustomHID_GetProtocolValue</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, usb_prop.o(.text))
+<P><STRONG><a name="[153]"></a>CustomHID_GetProtocolValue</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, usb_prop.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.text)
 </UL>
-<P><STRONG><a name="[14f]"></a>CustomHID_GetHIDDescriptor</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usb_prop.o(.text))
+<P><STRONG><a name="[150]"></a>CustomHID_GetHIDDescriptor</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usb_prop.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CustomHID_GetHIDDescriptor &rArr; Standard_GetDescriptorData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.text)
 </UL>
-<P><STRONG><a name="[151]"></a>CustomHID_GetReportDescriptor</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usb_prop.o(.text))
+<P><STRONG><a name="[152]"></a>CustomHID_GetReportDescriptor</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usb_prop.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CustomHID_GetReportDescriptor &rArr; Standard_GetDescriptorData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.text)
 </UL>
@@ -2415,42 +2417,42 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
-<P><STRONG><a name="[153]"></a>CustomHID_SetProtocol</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, usb_prop.o(.text))
+<P><STRONG><a name="[154]"></a>CustomHID_SetProtocol</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, usb_prop.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_NoData_Setup
 </UL>
 
 <P><STRONG><a name="[9]"></a>CustomHID_NoData_Setup</STRONG> (Thumb, 32 bytes, Stack size 4 bytes, usb_prop.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = CustomHID_NoData_Setup
 </UL>
-<BR>[Calls]<UL><LI><a href="#[153]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_SetProtocol
+<BR>[Calls]<UL><LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_SetProtocol
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
 <P><STRONG><a name="[b]"></a>CustomHID_GetDeviceDescriptor</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usb_prop.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CustomHID_GetDeviceDescriptor &rArr; Standard_GetDescriptorData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
 <P><STRONG><a name="[c]"></a>CustomHID_GetConfigDescriptor</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usb_prop.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CustomHID_GetConfigDescriptor &rArr; Standard_GetDescriptorData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
 <P><STRONG><a name="[d]"></a>CustomHID_GetStringDescriptor</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, usb_prop.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = CustomHID_GetStringDescriptor &rArr; Standard_GetDescriptorData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
+<BR>[Calls]<UL><LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_GetDescriptorData
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
 <P><STRONG><a name="[a]"></a>CustomHID_Get_Interface_Setting</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, usb_prop.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
-<P><STRONG><a name="[147]"></a>PowerOn</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, usb_pwr.o(.text))
+<P><STRONG><a name="[148]"></a>PowerOn</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, usb_pwr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PowerOn &rArr; USB_Cable_Config
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Cable_Config
@@ -2458,22 +2460,22 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_init
 </UL>
 
-<P><STRONG><a name="[154]"></a>PowerOff</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, usb_pwr.o(.text), UNUSED)
+<P><STRONG><a name="[155]"></a>PowerOff</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, usb_pwr.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Cable_Config
 </UL>
 
-<P><STRONG><a name="[146]"></a>Suspend</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, usb_pwr.o(.text))
+<P><STRONG><a name="[147]"></a>Suspend</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, usb_pwr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Suspend
 </UL>
-<BR>[Calls]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enter_LowPowerMode
+<BR>[Calls]<UL><LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enter_LowPowerMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Istr
 </UL>
 
-<P><STRONG><a name="[156]"></a>Resume_Init</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, usb_pwr.o(.text))
+<P><STRONG><a name="[157]"></a>Resume_Init</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, usb_pwr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Resume_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Leave_LowPowerMode
+<BR>[Calls]<UL><LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Leave_LowPowerMode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume
 </UL>
@@ -2481,7 +2483,7 @@ Global Symbols
 <P><STRONG><a name="[66]"></a>Resume</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, usb_pwr.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Resume &rArr; Resume_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume_Init
+<BR>[Calls]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Resume_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_Istr
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OTG_FS_WKUP_IRQHandler
@@ -2491,16 +2493,16 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
-<LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Init
 </UL>
 
-<P><STRONG><a name="[15a]"></a>iNEMO_AHRS_DeInit</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, inemo_ahrs.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+<P><STRONG><a name="[15b]"></a>iNEMO_AHRS_DeInit</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, inemo_ahrs.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
 </UL>
 
 <P><STRONG><a name="[9c]"></a>iNEMO_AHRS_Update</STRONG> (Thumb, 4144 bytes, Stack size 136 bytes, inemo_ahrs.o(.text), UNUSED)
@@ -2510,174 +2512,174 @@ Global Symbols
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
-<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCopy
-<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCopy
+<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
 <BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
 </UL>
 
-<P><STRONG><a name="[163]"></a>iNEMO_Malloc</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, inemo_ahrs_memman_1.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<P><STRONG><a name="[164]"></a>iNEMO_Malloc</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, inemo_ahrs_memman_1.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatCreate
-<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
-</UL>
-
-<P><STRONG><a name="[165]"></a>iNEMO_Free</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, inemo_ahrs_memman_1.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
-</UL>
-<BR>[Called By]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatFree
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+<BR>[Called By]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatCreate
+<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
 </UL>
 
-<P><STRONG><a name="[15d]"></a>iNEMO_PropagateP</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, inemo_ekf.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
-<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
-<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+<P><STRONG><a name="[166]"></a>iNEMO_Free</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, inemo_ahrs_memman_1.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatFree
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+</UL>
+
+<P><STRONG><a name="[15e]"></a>iNEMO_PropagateP</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, inemo_ekf.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
+<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
+<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 </UL>
 
-<P><STRONG><a name="[15f]"></a>iNEMO_CalculateK</STRONG> (Thumb, 136 bytes, Stack size 32 bytes, inemo_ekf.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
-<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
-<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+<P><STRONG><a name="[160]"></a>iNEMO_CalculateK</STRONG> (Thumb, 136 bytes, Stack size 32 bytes, inemo_ekf.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
+<LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
+<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 </UL>
 
-<P><STRONG><a name="[160]"></a>iNEMO_UpdateP</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, inemo_ekf.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatSub
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
-<LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
+<P><STRONG><a name="[161]"></a>iNEMO_UpdateP</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, inemo_ekf.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatSub
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 </UL>
 
-<P><STRONG><a name="[167]"></a>iNEMO_fMatCreate</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Malloc
+<P><STRONG><a name="[168]"></a>iNEMO_fMatCreate</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
-<LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
-</UL>
-
-<P><STRONG><a name="[16d]"></a>iNEMO_sMatCreate</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Malloc
-</UL>
-<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
 </UL>
 
-<P><STRONG><a name="[158]"></a>iNEMO_fMatCreateInit</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
+<P><STRONG><a name="[16e]"></a>iNEMO_sMatCreate</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Malloc
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+</UL>
+
+<P><STRONG><a name="[159]"></a>iNEMO_fMatCreateInit</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
-<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
+<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
 </UL>
 
-<P><STRONG><a name="[172]"></a>iNEMO_fMatFill</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<P><STRONG><a name="[173]"></a>iNEMO_fMatFill</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
 </UL>
 
-<P><STRONG><a name="[15b]"></a>iNEMO_fMatFree</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Free
+<P><STRONG><a name="[15c]"></a>iNEMO_fMatFree</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
-<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
-<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_DeInit
-</UL>
-
-<P><STRONG><a name="[16e]"></a>iNEMO_sMatFree</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Free
-</UL>
-<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_DeInit
 </UL>
 
-<P><STRONG><a name="[15e]"></a>iNEMO_fMatCopy</STRONG> (Thumb, 84 bytes, Stack size 12 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[16f]"></a>iNEMO_sMatFree</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Free
+</UL>
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+</UL>
+
+<P><STRONG><a name="[15f]"></a>iNEMO_fMatCopy</STRONG> (Thumb, 84 bytes, Stack size 12 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
 </UL>
 
-<P><STRONG><a name="[16a]"></a>iNEMO_fMatAdd</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[16b]"></a>iNEMO_fMatAdd</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
 </UL>
 
-<P><STRONG><a name="[16c]"></a>iNEMO_fMatSub</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[16d]"></a>iNEMO_fMatSub</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
+<BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
 </UL>
 
-<P><STRONG><a name="[168]"></a>iNEMO_fMatMulMat</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[169]"></a>iNEMO_fMatMulMat</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+<BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_UpdateP
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
 </UL>
 
-<P><STRONG><a name="[169]"></a>iNEMO_fMatMulMatMT</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[16a]"></a>iNEMO_fMatMulMatMT</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+<BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
 </UL>
 
-<P><STRONG><a name="[16f]"></a>iNEMO_MatBackSubs</STRONG> (Thumb, 346 bytes, Stack size 48 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[170]"></a>iNEMO_MatBackSubs</STRONG> (Thumb, 346 bytes, Stack size 48 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
 </UL>
 
-<P><STRONG><a name="[170]"></a>iNEMO_MatLUP</STRONG> (Thumb, 422 bytes, Stack size 56 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[171]"></a>iNEMO_MatLUP</STRONG> (Thumb, 422 bytes, Stack size 56 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmpeq
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmpeq
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
-</UL>
-
-<P><STRONG><a name="[16b]"></a>iNEMO_fMatInv</STRONG> (Thumb, 192 bytes, Stack size 40 bytes, inemo_math.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
-<LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatFree
-<LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFill
-<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatCreate
-<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCopy
-</UL>
-<BR>[Called By]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+<BR>[Called By]<UL><LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
 </UL>
 
-<P><STRONG><a name="[173]"></a>iNEMO_WrapAround</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, inemo_math.o(.text), UNUSED)
+<P><STRONG><a name="[16c]"></a>iNEMO_fMatInv</STRONG> (Thumb, 192 bytes, Stack size 40 bytes, inemo_math.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatFree
+<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFill
+<LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_sMatCreate
+<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreate
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatFree
+<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCopy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
+</UL>
+
+<P><STRONG><a name="[174]"></a>iNEMO_WrapAround</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
@@ -2687,8 +2689,8 @@ Global Symbols
 <P><STRONG><a name="[11d]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_uldivmod
 </UL>
-<BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_g_sensor_timeout
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_ping
@@ -2727,17 +2729,17 @@ Global Symbols
 
 <P><STRONG><a name="[247]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[177]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
-<LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<P><STRONG><a name="[178]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
+<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
 <P><STRONG><a name="[248]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[249]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[176]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<P><STRONG><a name="[177]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
 <P><STRONG><a name="[f7]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
@@ -2753,8 +2755,8 @@ Global Symbols
 
 <P><STRONG><a name="[24a]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[178]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<P><STRONG><a name="[179]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
 <P><STRONG><a name="[61]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
@@ -2770,8 +2772,8 @@ Global Symbols
 <P><STRONG><a name="[a4]"></a>__aeabi_fadd</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, fadd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = __aeabi_fadd &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
-<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
+<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
+<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
@@ -2781,13 +2783,13 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_gyro_bias
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
-<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
-<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
+<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
+<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
 
 <P><STRONG><a name="[a8]"></a>__aeabi_fsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text))
@@ -2798,55 +2800,101 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
-<LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatSub
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
+<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatSub
 </UL>
 
-<P><STRONG><a name="[15c]"></a>__aeabi_frsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
+<P><STRONG><a name="[15d]"></a>__aeabi_frsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
-<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
 </UL>
 
-<P><STRONG><a name="[124]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
+<P><STRONG><a name="[123]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fmul
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
-<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
-<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
 </UL>
 
-<P><STRONG><a name="[123]"></a>__aeabi_fdiv</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, fdiv.o(.text))
+<P><STRONG><a name="[122]"></a>__aeabi_fdiv</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, fdiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fdiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
+<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
-<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+</UL>
+
+<P><STRONG><a name="[127]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+</UL>
+<BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lasr
+<LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+</UL>
+<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
+</UL>
+
+<P><STRONG><a name="[17f]"></a>__aeabi_dsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+</UL>
+<BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
+<LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
+</UL>
+
+<P><STRONG><a name="[180]"></a>__aeabi_drsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_drsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+</UL>
+<BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
+<LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
 
 <P><STRONG><a name="[99]"></a>__aeabi_dmul</STRONG> (Thumb, 228 bytes, Stack size 48 bytes, dmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR>[Calls]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
@@ -2857,22 +2905,22 @@ Global Symbols
 <P><STRONG><a name="[9a]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __aeabi_ddiv &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
-<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
 
 <P><STRONG><a name="[a3]"></a>__aeabi_i2f</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fflti.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_i2f &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
+<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
@@ -2883,7 +2931,7 @@ Global Symbols
 <P><STRONG><a name="[c2]"></a>__aeabi_ui2f</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ffltui.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_ui2f &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
+<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain2
@@ -2892,7 +2940,7 @@ Global Symbols
 <P><STRONG><a name="[98]"></a>__aeabi_i2d</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, dflti.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __aeabi_i2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR>[Calls]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
@@ -2914,67 +2962,73 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
 <P><STRONG><a name="[9b]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_d2f
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
+<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
-<P><STRONG><a name="[171]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cfcmple.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<P><STRONG><a name="[172]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cfcmple.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
 </UL>
 
 <P><STRONG><a name="[c5]"></a>__aeabi_cfcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfcmple.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain2
-<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
 </UL>
 
 <P><STRONG><a name="[c4]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfrcmple.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
 <LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain2
-<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
-<LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
+<LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
 </UL>
 
-<P><STRONG><a name="[175]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<P><STRONG><a name="[176]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
 <P><STRONG><a name="[24b]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
-<P><STRONG><a name="[174]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
+<P><STRONG><a name="[175]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
 <P><STRONG><a name="[24c]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[24d]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
-
-<P><STRONG><a name="[17a]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<P><STRONG><a name="[17c]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[179]"></a>_float_epilogue</STRONG> (Thumb, 92 bytes, Stack size 4 bytes, fepilogue.o(.text))
+<P><STRONG><a name="[24d]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+
+<P><STRONG><a name="[24e]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+
+<P><STRONG><a name="[17b]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+</UL>
+
+<P><STRONG><a name="[17a]"></a>_float_epilogue</STRONG> (Thumb, 92 bytes, Stack size 4 bytes, fepilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = _float_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
@@ -2982,78 +3036,34 @@ Global Symbols
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
 
-<P><STRONG><a name="[17c]"></a>_double_round</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, depilogue.o(.text))
+<P><STRONG><a name="[17e]"></a>_double_round</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, depilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _double_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[17b]"></a>_double_epilogue</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, depilogue.o(.text))
+<P><STRONG><a name="[17d]"></a>_double_epilogue</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, depilogue.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
-</UL>
-
-<P><STRONG><a name="[17d]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lasr
-<LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
-</UL>
-<BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
-<LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
-<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
-<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
-</UL>
-
-<P><STRONG><a name="[17f]"></a>__aeabi_dsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
-<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
-<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
-</UL>
-
-<P><STRONG><a name="[180]"></a>__aeabi_drsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_drsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
-<LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
-<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
-<LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
 
 <P><STRONG><a name="[188]"></a>__ARM_scalbn</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, dscalb.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __ARM_scalbn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
@@ -3061,13 +3071,13 @@ Global Symbols
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
 
-<P><STRONG><a name="[24e]"></a>scalbn</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, dscalb.o(.text), UNUSED)
+<P><STRONG><a name="[24f]"></a>scalbn</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, dscalb.o(.text), UNUSED)
 
 <P><STRONG><a name="[181]"></a>_dsqrt</STRONG> (Thumb, 162 bytes, Stack size 32 bytes, dsqrt.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<BR><BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
+<BR>[Called By]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 </UL>
 
 <P><STRONG><a name="[5b]"></a>__scatterload</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, init.o(.text))
@@ -3076,18 +3086,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[24f]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
-
-<P><STRONG><a name="[17e]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-</UL>
-
-<P><STRONG><a name="[250]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[250]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[183]"></a>__aeabi_ui2d</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, dfltui.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __aeabi_ui2d &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<BR>[Calls]<UL><LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 </UL>
@@ -3095,7 +3099,7 @@ Global Symbols
 <P><STRONG><a name="[184]"></a>__aeabi_d2iz</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, dfixi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_d2iz
 </UL>
-<BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+<BR>[Calls]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
@@ -3119,7 +3123,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[18c]"></a>__ARM_fpclassify</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, fpclassify.o(i.__ARM_fpclassify))
-<BR><BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<BR><BR>[Called By]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
@@ -3129,15 +3133,15 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 <LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2d
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
 </UL>
 
 <P><STRONG><a name="[189]"></a>__kernel_cos</STRONG> (Thumb, 230 bytes, Stack size 48 bytes, cos_i.o(i.__kernel_cos))
@@ -3150,17 +3154,17 @@ Global Symbols
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2iz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
 </UL>
 
 <P><STRONG><a name="[18a]"></a>__kernel_poly</STRONG> (Thumb, 170 bytes, Stack size 24 bytes, poly.o(i.__kernel_poly))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<BR>[Called By]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
@@ -3170,16 +3174,16 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = __kernel_sin &rArr; __kernel_poly &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
 <LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
 </UL>
 
 <P><STRONG><a name="[18d]"></a>__mathlib_dbl_underflow</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, dunder.o(i.__mathlib_dbl_underflow))
@@ -3187,7 +3191,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<BR>[Called By]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
@@ -3199,19 +3203,19 @@ Global Symbols
 <P><STRONG><a name="[256]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[18e]"></a>__set_errno</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, errno.o(i.__set_errno))
-<BR><BR>[Called By]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<BR><BR>[Called By]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 </UL>
 
-<P><STRONG><a name="[162]"></a>asin</STRONG> (Thumb, 584 bytes, Stack size 56 bytes, asin.o(i.asin), UNUSED)
+<P><STRONG><a name="[163]"></a>asin</STRONG> (Thumb, 584 bytes, Stack size 56 bytes, asin.o(i.asin), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
@@ -3224,28 +3228,28 @@ Global Symbols
 <P><STRONG><a name="[18f]"></a>atan</STRONG> (Thumb, 478 bytes, Stack size 40 bytes, atan.o(i.atan), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 <LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
 <LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 </UL>
-<BR>[Called By]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<BR>[Called By]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
 </UL>
 
-<P><STRONG><a name="[161]"></a>atan2</STRONG> (Thumb, 346 bytes, Stack size 32 bytes, atan2.o(i.atan2), UNUSED)
+<P><STRONG><a name="[162]"></a>atan2</STRONG> (Thumb, 346 bytes, Stack size 32 bytes, atan2.o(i.atan2), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
-<LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 </UL>
 
-<P><STRONG><a name="[128]"></a>cos</STRONG> (Thumb, 164 bytes, Stack size 32 bytes, cos.o(i.cos))
+<P><STRONG><a name="[129]"></a>cos</STRONG> (Thumb, 164 bytes, Stack size 32 bytes, cos.o(i.cos))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = cos &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -3255,18 +3259,18 @@ Global Symbols
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 </UL>
-<BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
-<P><STRONG><a name="[166]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, malloc.o(i.free), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Free
+<P><STRONG><a name="[167]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, malloc.o(i.free), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Free
 </UL>
 
-<P><STRONG><a name="[164]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Malloc
+<P><STRONG><a name="[165]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_Malloc
 </UL>
 
-<P><STRONG><a name="[127]"></a>sin</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, sin.o(i.sin))
+<P><STRONG><a name="[128]"></a>sin</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, sin.o(i.sin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = sin &rArr; __ieee754_rem_pio2 &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
@@ -3276,16 +3280,16 @@ Global Symbols
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_cos
 </UL>
-<BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
-<P><STRONG><a name="[159]"></a>sqrt</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, sqrt.o(i.sqrt), UNUSED)
+<P><STRONG><a name="[15a]"></a>sqrt</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, sqrt.o(i.sqrt), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsqrt
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
 </UL>
 <P>
 <H3>
@@ -3339,45 +3343,45 @@ Local Symbols
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
 </UL>
 
-<P><STRONG><a name="[12e]"></a>DataStageOut</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, usb_core.o(.text))
+<P><STRONG><a name="[12f]"></a>DataStageOut</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = DataStageOut &rArr; PMAToUserBufferCopy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMAToUserBufferCopy
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
+<BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
 </UL>
 
-<P><STRONG><a name="[130]"></a>DataStageIn</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, usb_core.o(.text))
+<P><STRONG><a name="[131]"></a>DataStageIn</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = DataStageIn &rArr; UserToPMABufferCopy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserToPMABufferCopy
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
-<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
+<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Setup0
+<BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Setup0
 </UL>
 
-<P><STRONG><a name="[132]"></a>NoData_Setup0</STRONG> (Thumb, 290 bytes, Stack size 16 bytes, usb_core.o(.text))
+<P><STRONG><a name="[133]"></a>NoData_Setup0</STRONG> (Thumb, 290 bytes, Stack size 16 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = NoData_Setup0 &rArr; Standard_ClearFeature &rArr; SetEPTxStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetDeviceFeature
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetEndPointFeature
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetInterface
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetConfiguration
+<BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetDeviceFeature
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetEndPointFeature
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_ClearFeature
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetInterface
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Standard_SetConfiguration
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
+<BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
 </UL>
 
-<P><STRONG><a name="[13a]"></a>Data_Setup0</STRONG> (Thumb, 678 bytes, Stack size 40 bytes, usb_core.o(.text))
+<P><STRONG><a name="[13b]"></a>Data_Setup0</STRONG> (Thumb, 678 bytes, Stack size 40 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = Data_Setup0 &rArr; DataStageIn &rArr; UserToPMABufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<BR>[Calls]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
+<BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Setup0_Process
 </UL>
 
 <P><STRONG><a name="[186]"></a>_printf_core</STRONG> (Thumb, 214 bytes, Stack size 40 bytes, printf2.o(i._printf_core), UNUSED)

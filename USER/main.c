@@ -49,32 +49,15 @@ union odometry  	 		//里程计数据共用体
 
  int main(void)
  {	 
-
-#if 0
-	 u8 t=0;
-	 u8 i=0,j=0,m=0;
-#endif
-
 		UART_INFO *send_ptr = &send_buf;
 		uint8_t *send = (uint8_t *)send_ptr;
 		int send_size = 0;
 	 
 	 BSP_Configuration();		//板级资源 初始化
 	 us_mcu_id_get();				//US Get MCU ID
-//	 static int count;
+
 	 while(1)
-	 {  		
-//			 delay_ms(100);
-//			 count++;
-//			 if(160000 == count){
-//					odometry(Milemeter_R_Motor,Milemeter_L_Motor);//计算里程计
-//					count = 0;
-//			}
-//			if(main_sta&0x02)//执行计算里程计数据步骤
-//			{
-//				odometry(Milemeter_R_Motor,Milemeter_L_Motor);//计算里程计 
-//				main_sta&=0xFD;//执行发送里程计数据步骤
-//			}
+	 {  			
 		 		if(GetEPTxStatus(ENDP2) == EP_TX_NAK){
 					 if(us_mcu_rc_buff_delete(send_ptr) == OK){
 							if((send_size = us_mcu_uart_coder(send_ptr)) < 0){
@@ -83,9 +66,7 @@ union odometry  	 		//里程计数据共用体
 								 USB_SendData(send, send_size);
 						 }
 					 }
-				 }
-
-				 
+				 }				 
 	 }	 //end while
  }	//end main
 

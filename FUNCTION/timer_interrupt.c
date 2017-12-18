@@ -193,7 +193,7 @@ void TIM5_IRQHandler(void)
 	//young
 	if( TIM_GetITStatus(TIM5 , TIM_IT_Update) != RESET ) 
 	{
-		odometry(Milemeter_R_Motor,Milemeter_L_Motor);//计算里程计
+//		odometry(Milemeter_R_Motor,Milemeter_L_Motor);//计算里程计
 		if(ROBOT_ENCODER_EN == 1){
 			sjs_robot_encoder_send(SJS_ROBOT_ENCODER, (int)position_x , (int)position_y, (int)((oriention * (180/pi))*100), timer);			
 		}
@@ -234,6 +234,8 @@ void TIM6_IRQHandler(void)
 				Milemeter_L_Motor= (float)wtemp1; //储存脉冲数
 				Milemeter_R_Motor= (float)wtemp2;
 				
+			  odometry(Milemeter_R_Motor,Milemeter_L_Motor);//计算里程计
+			
 //				printf("wtemp2 = %d , wtemp1 = %d \r\n",wtemp2, wtemp1);
 				
 				main_sta|=0x02;//执行计算里程计数据步骤

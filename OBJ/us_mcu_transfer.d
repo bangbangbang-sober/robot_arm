@@ -1,9 +1,9 @@
 ..\obj\us_mcu_transfer.o: ..\FUNCTION\us_mcu_transfer.c
-..\obj\us_mcu_transfer.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-..\obj\us_mcu_transfer.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+..\obj\us_mcu_transfer.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\us_mcu_transfer.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
 ..\obj\us_mcu_transfer.o: ..\USER\stm32f10x.h
 ..\obj\us_mcu_transfer.o: ..\CORE\core_cm3.h
-..\obj\us_mcu_transfer.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\us_mcu_transfer.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\us_mcu_transfer.o: ..\USER\system_stm32f10x.h
 ..\obj\us_mcu_transfer.o: ..\USER\stm32f10x_conf.h
 ..\obj\us_mcu_transfer.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

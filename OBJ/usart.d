@@ -2,7 +2,7 @@
 ..\obj\usart.o: ..\SYSTEM\sys\sys.h
 ..\obj\usart.o: ..\USER\stm32f10x.h
 ..\obj\usart.o: ..\CORE\core_cm3.h
-..\obj\usart.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\usart.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\usart.o: ..\USER\system_stm32f10x.h
 ..\obj\usart.o: ..\USER\stm32f10x_conf.h
 ..\obj\usart.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -30,7 +30,8 @@
 ..\obj\usart.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\usart.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\usart.o: ..\SYSTEM\usart\usart.h
-..\obj\usart.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\usart.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 ..\obj\usart.o: ..\FUNCTION\us_can_zyt.h
 ..\obj\usart.o: ..\FUNCTION\us_mcu_transfer.h
 ..\obj\usart.o: ..\USB\inc\usb_desc.h
+..\obj\usart.o: ..\FUNCTION\imu_uranus.h

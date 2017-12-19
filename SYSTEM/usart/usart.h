@@ -32,7 +32,11 @@
 extern u8  USART_RX_BUF[USART_REC_LEN]; //接收缓冲,最大USART_REC_LEN个字节.末字节为换行符 
 extern u16 USART_RX_STA;         		//接收状态标记	
 //如果想串口中断接收，请不要注释以下宏定义
-void UART_Configuration(u32 bound);
+
+
+void UART1_Configuration(u32 bound);
+void UART3_Configuration(u32 bound);
+void UART5_Configuration(u32 bound);
 #endif
 
 

@@ -2,7 +2,7 @@
 ..\obj\usb_mem.o: ..\STM32_USB-FS-Device_Driver\inc\usb_lib.h
 ..\obj\usb_mem.o: ..\USER\stm32f10x.h
 ..\obj\usb_mem.o: ..\CORE\core_cm3.h
-..\obj\usb_mem.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\usb_mem.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\usb_mem.o: ..\USER\system_stm32f10x.h
 ..\obj\usb_mem.o: ..\USER\stm32f10x_conf.h
 ..\obj\usb_mem.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

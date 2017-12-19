@@ -60,21 +60,11 @@ void odometry(float right,float left)
 {	
 	if(once)  //常数仅计算一次
 	{		
-//		//test_success
-//		const_frame = encoder_diameter*pi/(line_number*multiplier); 								//0.9162978416666667
-//		const_angle = const_frame/wheel_interval;	
-		
 		const_frame = encoder_diameter*pi/(line_number*multiplier);
 		const_angle = const_frame /wheel_interval;																			//0.0003651913666667
 		once=0;
 	}
 	
-//young_test
-//		right_count = right_count + right;
-//		left_count = left_count + left;
-//		printf("right_count = %d , left_count = %d \r\n",right_count, left_count);
-	
-//test_success		
 		distance_sum = 0.5f*(right+left);			//在很短的时间内，小车行驶的路程为两轮速度和
 		distance_diff = right-left;						//在很短的时间内，小车行驶的角度为两轮速度差
 	
@@ -84,10 +74,7 @@ void odometry(float right,float left)
 		oriention_interval = delta_oriention * const_angle;		//采样时间内走的角度	
 		oriention = oriention + oriention_interval + (3.0/360.0) * oriention_interval;						//计算出里程计方向角
 		oriention_1 = oriention + 0.5f * oriention_interval;	//里程计方向角数据位数变化，用于三角函数计算
- 
-	
-//		yaw = oriention * (180/pi);	
-//	
+
 //		printf("yaw = %f \r\n",yaw);
 
 		sin_ = sin(oriention_1);			//计算出采样时间内x坐标

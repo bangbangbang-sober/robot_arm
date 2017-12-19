@@ -9,6 +9,8 @@
 #include "us_can_zyt.h"
 #include "us_mcu_transfer.h"
 
+#include "imu_uranus.h"
+
 UART_INFO send_buf;
 
 /***********************************************  Êä³ö  *****************************************************************/
@@ -25,6 +27,9 @@ extern u8 USART_RX_BUF[USART_REC_LEN];     //´®¿Ú½ÓÊÕ»º³å,×î´óUSART_REC_LEN¸ö×Ö½
 extern u16 USART_RX_STA;                   //´®¿Ú½ÓÊÕ×´Ì¬±ê¼Ç	
 
 extern float Milemeter_L_Motor,Milemeter_R_Motor;     //dtÊ±¼äÄÚµÄ×óÓÒÂÖËÙ¶È,ÓÃÓÚÀï³Ì¼Æ¼ÆËã
+
+/*********************************************** imu data ***************************************************************/
+extern imu_data_t imu_data_3,imu_data_5;
 
 /***********************************************  ±äÁ¿  *****************************************************************/
 
@@ -57,16 +62,19 @@ union odometry  	 		//Àï³Ì¼ÆÊı¾İ¹²ÓÃÌå
 	 us_mcu_id_get();				//US Get MCU ID
 
 	 while(1)
-	 {  			
-		 		if(GetEPTxStatus(ENDP2) == EP_TX_NAK){
-					 if(us_mcu_rc_buff_delete(send_ptr) == OK){
-							if((send_size = us_mcu_uart_coder(send_ptr)) < 0){
-									us_dev_error(MCU_CONFIG, (unsigned char *)__func__, strlen(__func__)+1, send_size);
-						 }else{
-								 USB_SendData(send, send_size);
-						 }
+	 {  		
+			delay_ms(200);
+			printf("imu_data_3--P/R/Y/P:%05d %05d %05d %05d \r\n",imu_data_3.pitch/100, imu_data_3.roll/100, imu_data_3.yaw/10, imu_data_3.presure);
+			printf("imu_data_5--P/R/Y/P:%05d %05d %05d %05d \r\n",imu_data_5.pitch/100, imu_data_5.roll/100, imu_data_5.yaw/10, imu_data_5.presure);
+			if(GetEPTxStatus(ENDP2) == EP_TX_NAK){
+				 if(us_mcu_rc_buff_delete(send_ptr) == OK){
+						if((send_size = us_mcu_uart_coder(send_ptr)) < 0){
+								us_dev_error(MCU_CONFIG, (unsigned char *)__func__, strlen(__func__)+1, send_size);
+					 }else{
+							 USB_SendData(send, send_size);
 					 }
-				 }				 
+				 }
+			 }				 
 	 }	 //end while
  }	//end main
 

@@ -1,7 +1,7 @@
 ..\obj\usb_pwr.o: ..\USB\usb_pwr.c
 ..\obj\usb_pwr.o: ..\USER\stm32f10x.h
 ..\obj\usb_pwr.o: ..\CORE\core_cm3.h
-..\obj\usb_pwr.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\usb_pwr.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\usb_pwr.o: ..\USER\system_stm32f10x.h
 ..\obj\usb_pwr.o: ..\USER\stm32f10x_conf.h
 ..\obj\usb_pwr.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -40,9 +40,9 @@
 ..\obj\usb_pwr.o: ..\STM32_USB-FS-Device_Driver\inc\usb_sil.h
 ..\obj\usb_pwr.o: ..\USB\inc\usb_pwr.h
 ..\obj\usb_pwr.o: ..\USER\BSP_init.h
-..\obj\usb_pwr.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-..\obj\usb_pwr.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
-..\obj\usb_pwr.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+..\obj\usb_pwr.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\usb_pwr.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+..\obj\usb_pwr.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
 ..\obj\usb_pwr.o: ..\HARDWARE\LED\led.h
 ..\obj\usb_pwr.o: ..\SYSTEM\sys\sys.h
 ..\obj\usb_pwr.o: ..\SYSTEM\delay\delay.h

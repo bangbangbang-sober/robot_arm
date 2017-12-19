@@ -45,6 +45,7 @@
 "..\obj\pid.o"
 "..\obj\contact.o"
 "..\obj\odometry.o"
+"..\obj\imu_uranus.o"
 "..\obj\otgd_fs_cal.o"
 "..\obj\otgd_fs_dev.o"
 "..\obj\otgd_fs_int.o"

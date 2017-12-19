@@ -1,7 +1,7 @@
 ..\obj\bsp_init.o: BSP_init.c
 ..\obj\bsp_init.o: stm32f10x.h
 ..\obj\bsp_init.o: ..\CORE\core_cm3.h
-..\obj\bsp_init.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\bsp_init.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\bsp_init.o: system_stm32f10x.h
 ..\obj\bsp_init.o: stm32f10x_conf.h
 ..\obj\bsp_init.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -45,10 +45,10 @@
 ..\obj\bsp_init.o: ..\FUNCTION\us_can_zyt.h
 ..\obj\bsp_init.o: ..\HARDWARE\TIMER\timer_function.h
 ..\obj\bsp_init.o: ..\HARDWARE\MPU9250\iic_mpu9250.h
-..\obj\bsp_init.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+..\obj\bsp_init.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
 ..\obj\bsp_init.o: BSP_init.h
-..\obj\bsp_init.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-..\obj\bsp_init.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+..\obj\bsp_init.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\bsp_init.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
 ..\obj\bsp_init.o: ..\HARDWARE\LED\led.h
 ..\obj\bsp_init.o: ..\SYSTEM\sys\sys.h
 ..\obj\bsp_init.o: ..\SYSTEM\delay\delay.h

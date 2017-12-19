@@ -230,19 +230,19 @@ void BSP_Configuration(void)
 	NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x0000);
 	Set_System();									//系统时钟配置
 	
-//	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
-
+//NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 	RCC_Configuration();					//开启部分硬件时钟
-
-	Set_USBClock(); 							//Set USB Clock
-	USB_Init(); 									//USB Init	
-	USB_Interrupts_Config();			//USB Interrupt Config
-
 	
 	NVIC_Configuration();					//中断优先级配置
-	GPIO_Configuration();					//电机方向控制引脚配置
+//	GPIO_Configuration();					//电机方向控制引脚配置
+	
+//	Set_USBClock(); 							//Set USB Clock
+//	USB_Init(); 									//USB Init	
+//	USB_Interrupts_Config();			//USB Interrupt Config
 
- // UART_Configuration(115200);		//串口初始化为115200
+  UART1_Configuration(115200);	//串口初始化为115200
+	UART3_Configuration(115200);	//串口初始化为115200,获取传感器数据
+	UART5_Configuration(115200);	//串口初始化为115200,获取传感器数据
 	
 	delay_init();	    	 					//延时函数初始化	
 	TIM_Configuration();					//定时器初始化

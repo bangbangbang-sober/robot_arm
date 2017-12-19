@@ -56,9 +56,9 @@
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
-            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>E:\WORK\姿态模块\MCU_SENSOR\MCU_SENSOR\robot_mcu\robot_mcu\OBJ\USART.hex</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -672,6 +672,11 @@
               <FileType>1</FileType>
               <FilePath>..\FUNCTION\odometry.c</FilePath>
             </File>
+            <File>
+              <FileName>imu_uranus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FUNCTION\imu_uranus.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -783,6 +788,9 @@
               <FilePath>..\iNEMO_AHRS_v121\src\iNEMO_math.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>DOC</GroupName>
         </Group>
       </Groups>
     </Target>

@@ -672,6 +672,11 @@
               <FileType>1</FileType>
               <FilePath>..\FUNCTION\odometry.c</FilePath>
             </File>
+            <File>
+              <FileName>imu_uranus.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FUNCTION\imu_uranus.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

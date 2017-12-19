@@ -3,7 +3,7 @@
 ..\obj\usbio.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
 ..\obj\usbio.o: ..\USER\stm32f10x.h
 ..\obj\usbio.o: ..\CORE\core_cm3.h
-..\obj\usbio.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\usbio.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\usbio.o: ..\USER\system_stm32f10x.h
 ..\obj\usbio.o: ..\USER\stm32f10x_conf.h
 ..\obj\usbio.o: ..\STM32F10x_FWLib\inc\stm32f10x_bkp.h

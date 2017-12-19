@@ -2,7 +2,7 @@
 ..\obj\timer_function.o: ..\HARDWARE\TIMER\timer_function.h
 ..\obj\timer_function.o: ..\USER\stm32f10x.h
 ..\obj\timer_function.o: ..\CORE\core_cm3.h
-..\obj\timer_function.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\timer_function.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\timer_function.o: ..\USER\system_stm32f10x.h
 ..\obj\timer_function.o: ..\USER\stm32f10x_conf.h
 ..\obj\timer_function.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

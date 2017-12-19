@@ -2,7 +2,7 @@
 ..\obj\iic_mpu9250.o: ..\HARDWARE\MPU9250\IIC_MPU9250.h
 ..\obj\iic_mpu9250.o: ..\USER\STM32F10x.h
 ..\obj\iic_mpu9250.o: ..\CORE\core_cm3.h
-..\obj\iic_mpu9250.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\iic_mpu9250.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\iic_mpu9250.o: ..\USER\system_stm32f10x.h
 ..\obj\iic_mpu9250.o: ..\USER\stm32f10x_conf.h
 ..\obj\iic_mpu9250.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -33,8 +33,8 @@
 ..\obj\iic_mpu9250.o: ..\SYSTEM\sys\sys.h
 ..\obj\iic_mpu9250.o: ..\SYSTEM\delay\delay.h
 ..\obj\iic_mpu9250.o: ..\SYSTEM\usart\usart.h
-..\obj\iic_mpu9250.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-..\obj\iic_mpu9250.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\time.h
+..\obj\iic_mpu9250.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\iic_mpu9250.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\time.h
 ..\obj\iic_mpu9250.o: ..\STM32_USB-FS-Device_Driver\inc\usb_lib.h
 ..\obj\iic_mpu9250.o: ..\STM32_USB-FS-Device_Driver\inc\usb_type.h
 ..\obj\iic_mpu9250.o: ..\USB\inc\usb_conf.h
@@ -48,4 +48,4 @@
 ..\obj\iic_mpu9250.o: ..\FUNCTION\us_mcu_transfer.h
 ..\obj\iic_mpu9250.o: ..\USB\inc\usb_desc.h
 ..\obj\iic_mpu9250.o: ..\iNEMO_AHRS_v121\inc\iNEMO_AHRS.h
-..\obj\iic_mpu9250.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stddef.h
+..\obj\iic_mpu9250.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stddef.h

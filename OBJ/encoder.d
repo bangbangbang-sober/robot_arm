@@ -2,7 +2,7 @@
 ..\obj\encoder.o: ..\HARDWARE\ENCODER\encoder.h
 ..\obj\encoder.o: ..\USER\stm32f10x.h
 ..\obj\encoder.o: ..\CORE\core_cm3.h
-..\obj\encoder.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\encoder.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\encoder.o: ..\USER\system_stm32f10x.h
 ..\obj\encoder.o: ..\USER\stm32f10x_conf.h
 ..\obj\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -29,8 +29,8 @@
 ..\obj\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\encoder.o: ..\STM32F10x_FWLib\inc\misc.h
-..\obj\encoder.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
-..\obj\encoder.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdbool.h
+..\obj\encoder.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\encoder.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdbool.h
 ..\obj\encoder.o: ..\FUNCTION\PID.h
 ..\obj\encoder.o: ..\SYSTEM\delay\delay.h
 ..\obj\encoder.o: ..\SYSTEM\sys\sys.h

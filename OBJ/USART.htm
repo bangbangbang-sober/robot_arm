@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\USART.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\USART.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Tue Dec 19 18:56:12 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5040049: Last Updated: Tue Dec 19 20:08:31 2017
 <BR><P>
 <H3>Maximum Stack Usage =        320 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -674,12 +674,12 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>UART1_Configuration</STRONG> (Thumb, 152 bytes, Stack size 32 bytes, usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = UART1_Configuration &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Configuration
 </UL>
@@ -687,14 +687,14 @@ Global Symbols
 <P><STRONG><a name="[87]"></a>UART3_Configuration</STRONG> (Thumb, 168 bytes, Stack size 32 bytes, usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = UART3_Configuration &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinRemapConfig
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinRemapConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Configuration
 </UL>
@@ -702,13 +702,13 @@ Global Symbols
 <P><STRONG><a name="[88]"></a>UART5_Configuration</STRONG> (Thumb, 154 bytes, Stack size 32 bytes, usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = UART5_Configuration &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
-<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_Configuration
 </UL>
@@ -1108,10 +1108,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[d8]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AFIODeInit
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_DeInit
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DeInit
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_DeInit
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AFIODeInit
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_DeInit
 </UL>
 
 <P><STRONG><a name="[db]"></a>RCC_APB1PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
@@ -1133,8 +1133,8 @@ Global Symbols
 <P><STRONG><a name="[1c3]"></a>RCC_ClearITPendingBit</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
 <P><STRONG><a name="[da]"></a>USART_DeInit</STRONG> (Thumb, 134 bytes, Stack size 8 bytes, stm32f10x_usart.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
+<BR><BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 
 <P><STRONG><a name="[cd]"></a>USART_Init</STRONG> (Thumb, 210 bytes, Stack size 56 bytes, stm32f10x_usart.o(.text))
@@ -1305,8 +1305,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_GetBank1Status
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_store
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_UserOptionByteConfig
+<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_UserOptionByteConfig
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ReadOutProtection
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_EnableWriteProtection
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramOptionByteData
@@ -1315,6 +1314,7 @@ Global Symbols
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_EraseOptionBytes
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_EraseAllPages
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ErasePage
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_store
 </UL>
 
 <P><STRONG><a name="[e0]"></a>FLASH_ErasePage</STRONG> (Thumb, 72 bytes, Stack size 12 bytes, stm32f10x_flash.o(.text))
@@ -1395,8 +1395,8 @@ Global Symbols
 <P><STRONG><a name="[ae]"></a>TIM_DeInit</STRONG> (Thumb, 424 bytes, Stack size 8 bytes, stm32f10x_tim.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TIM_DeInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_Configuration
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_Configuration
@@ -1699,8 +1699,8 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_rc_buff_enter
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_usart_timeout
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_receivedata
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_receivedata
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_usart_timeout
 </UL>
 
 <P><STRONG><a name="[fd]"></a>us_usart_receivedata</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, us_can_zyt.o(.text), UNUSED)
@@ -1722,14 +1722,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_error
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_ping
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fetch
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_trans_config
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_usb_send
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_ULT_send
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_encoder_send
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_trans
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_ping
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fetch
 </UL>
 
 <P><STRONG><a name="[65]"></a>us_dev_error</STRONG> (Thumb, 72 bytes, Stack size 72 bytes, us_mcu_transfer.o(.text))
@@ -1741,11 +1741,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_uart_coder
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_rc_buff_enter
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;robot_mcu_Encoder_decoder
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sns_mcu_sensor_decoder
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_rc_buff_enter
 </UL>
 
 <P><STRONG><a name="[63]"></a>us_mcu_uart_coder</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, us_mcu_transfer.o(.text))
@@ -1935,6 +1935,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = us_mcu_recave &rArr; robot_mcu_Encoder_decoder &rArr; us_dev_error &rArr; us_mcu_rc_buff_enter
 </UL>
 <BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_error
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_load
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_uart_checksum
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxStatus
 <LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMAToUserBufferCopy
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
@@ -1947,9 +1950,6 @@ Global Symbols
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fetch
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fill
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_store
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_load
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_uart_checksum
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EP1_OUT_Callback
 </UL>
@@ -2001,11 +2001,11 @@ Global Symbols
 <P><STRONG><a name="[36]"></a>TIM2_IRQHandler</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, timer_interrupt.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = TIM2_IRQHandler &rArr; us_mcu_g_sensor_timeout &rArr; GetMPU9250Data &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
-<BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_g_sensor_timeout
+<BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_g_sensor_timeout
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_ping
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_link_check
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
@@ -2013,11 +2013,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = TIM5_IRQHandler &rArr; sjs_robot_encoder_send &rArr; us_mcu_rc_buff_enter
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_encoder_send
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
@@ -2030,9 +2030,9 @@ Global Symbols
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Rot_Speed1
 <LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ENC_Calc_Rot_Speed2
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ClearITPendingBit
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
@@ -2060,11 +2060,11 @@ Global Symbols
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sin
 <LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cos
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM6_IRQHandler
 </UL>
@@ -2209,16 +2209,16 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = UserToPMABufferCopy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SendData
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
 </UL>
 
 <P><STRONG><a name="[11e]"></a>PMAToUserBufferCopy</STRONG> (Thumb, 34 bytes, Stack size 20 bytes, usb_mem.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = PMAToUserBufferCopy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
-<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
+<BR>[Called By]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Read
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
 </UL>
 
 <P><STRONG><a name="[228]"></a>SetCNTR</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
@@ -2265,8 +2265,8 @@ Global Symbols
 <P><STRONG><a name="[11f]"></a>SetEPRxStatus</STRONG> (Thumb, 60 bytes, Stack size 12 bytes, usb_regs.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetEPRxStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
-<LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
+<BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
 </UL>
 
 <P><STRONG><a name="[14c]"></a>SetDouBleBuffEPStall</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, usb_regs.o(.text), UNUSED)
@@ -2342,8 +2342,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[13b]"></a>GetEPTxAddr</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, usb_regs.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<BR><BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
 </UL>
 
 <P><STRONG><a name="[139]"></a>GetEPRxAddr</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, usb_regs.o(.text))
@@ -2353,10 +2353,10 @@ Global Symbols
 
 <P><STRONG><a name="[121]"></a>SetEPTxCount</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, usb_regs.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SendData
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
 <LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CustomHID_Reset
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageIn
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DataStageOut
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USB_SIL_Write
 </UL>
 
 <P><STRONG><a name="[240]"></a>SetEPCountRxReg</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, usb_regs.o(.text), UNUSED)
@@ -2410,17 +2410,17 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[107]"></a>USB_SIL_Write</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usb_sil.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserToPMABufferCopy
+<BR><BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserToPMABufferCopy
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_usb_send
 </UL>
 
 <P><STRONG><a name="[14e]"></a>USB_SIL_Read</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, usb_sil.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMAToUserBufferCopy
-<LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxCount
+<BR><BR>[Calls]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxCount
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMAToUserBufferCopy
 </UL>
 
 <P><STRONG><a name="[0]"></a>EP1_IN_Callback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, usb_endp.o(.text))
@@ -2456,11 +2456,9 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
 <P><STRONG><a name="[5]"></a>CustomHID_Reset</STRONG> (Thumb, 182 bytes, Stack size 8 bytes, usb_prop.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = CustomHID_Reset &rArr; SetEPRxStatus
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = CustomHID_Reset &rArr; SetEPTxStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxStatus
-<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxAddr
+<BR>[Calls]<UL><LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxAddr
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxAddr
 <LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Clear_Status_Out
 <LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxValid
@@ -2469,6 +2467,8 @@ Global Symbols
 <LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxStatus
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxCount
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetDeviceAddress
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPRxStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usb_prop.o(.data)
 </UL>
@@ -2582,10 +2582,10 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatCreateInit
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Init
 </UL>
@@ -2601,7 +2601,6 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrt
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
@@ -2610,6 +2609,7 @@ Global Symbols
 <LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_PropagateP
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_CalculateK
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
 </UL>
@@ -2738,19 +2738,19 @@ Global Symbols
 <P><STRONG><a name="[179]"></a>iNEMO_MatBackSubs</STRONG> (Thumb, 346 bytes, Stack size 48 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 </UL>
 <BR>[Called By]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
 </UL>
 
 <P><STRONG><a name="[17a]"></a>iNEMO_MatLUP</STRONG> (Thumb, 422 bytes, Stack size 56 bytes, inemo_math.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmpeq
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 </UL>
 <BR>[Called By]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatInv
 </UL>
@@ -2781,9 +2781,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_g_sensor_timeout
+<BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ldivmod
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_g_sensor_timeout
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_ping
-<LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ldivmod
 </UL>
 
 <P><STRONG><a name="[c4]"></a>__aeabi_ldivmod</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, ldiv.o(.text))
@@ -2798,22 +2798,22 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_rc_buff_enter
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_rc_buff_delete
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_error
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_load
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_usb_send
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;robot_mcu_joystick_decoder
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_host_id_get
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fetch
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fill
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_load
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_usb_send
 </UL>
 
 <P><STRONG><a name="[fc]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fill
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_trans_config
+<BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_trans_config
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_ULT_send
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_encoder_send
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_trans
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fill
 </UL>
 
 <P><STRONG><a name="[24f]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
@@ -2833,13 +2833,13 @@ Global Symbols
 
 <P><STRONG><a name="[ff]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_error
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fetch
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_dev_trans_config
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_usb_send
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_ULT_send
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_robot_encoder_send
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sjs_mcu_id_get
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_flash_fetch
 </UL>
 
 <P><STRONG><a name="[252]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
@@ -2851,11 +2851,11 @@ Global Symbols
 <P><STRONG><a name="[64]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_uart_coder
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_rc_buff_enter
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_recave
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;robot_mcu_Encoder_decoder
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sns_mcu_sensor_decoder
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_mcu_input_data
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_usart_rc_buff_enter
 </UL>
 
 <P><STRONG><a name="[a8]"></a>__aeabi_fadd</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, fadd.o(.text))
@@ -2872,13 +2872,13 @@ Global Symbols
 <LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_gyro_bias
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
 <LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatAdd
 <LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
 <P><STRONG><a name="[ac]"></a>__aeabi_fsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text))
@@ -2889,10 +2889,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatSub
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
 <P><STRONG><a name="[166]"></a>__aeabi_frsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
@@ -2909,12 +2909,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
 <LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMatMT
 <LI><a href="#[172]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_fMatMulMat
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
 </UL>
 
 <P><STRONG><a name="[12a]"></a>__aeabi_fdiv</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, fdiv.o(.text))
@@ -2923,10 +2923,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Init
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatBackSubs
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_IRQHandler
 </UL>
 
 <P><STRONG><a name="[12f]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
@@ -2937,11 +2937,11 @@ Global Symbols
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
+<BR>[Called By]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
@@ -2982,8 +2982,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_AHRS_Update
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMPU9250Data
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SJS_iNEMO_Update
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;asin
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_sin
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ieee754_rem_pio2
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
@@ -3081,9 +3081,9 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PID_calculate
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain1
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gain2
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 <LI><a href="#[17d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_WrapAround
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iNEMO_MatLUP
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;odometry
 </UL>
 
 <P><STRONG><a name="[253]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
@@ -3453,9 +3453,9 @@ Local Symbols
 <P><STRONG><a name="[138]"></a>DataStageOut</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = DataStageOut &rArr; PMAToUserBufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
+<BR>[Calls]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
 <LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PMAToUserBufferCopy
-<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPRxAddr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Out0_Process
 </UL>
@@ -3463,9 +3463,9 @@ Local Symbols
 <P><STRONG><a name="[13a]"></a>DataStageIn</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, usb_core.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = DataStageIn &rArr; UserToPMABufferCopy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserToPMABufferCopy
+<BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserToPMABufferCopy
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEPTxCount
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEPTxAddr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;In0_Process
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Data_Setup0

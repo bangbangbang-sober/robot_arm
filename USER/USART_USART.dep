@@ -1,5 +1,5 @@
 Dependencies for Project 'USART', Target 'USART': (DO NOT MODIFY !)
-F (.\main.c)(0x5A38F049)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\FUNCTION -I..\STM32_USB-FS-Device_Driver\inc -I..\USB\inc -I..\HARDWARE\IIC -I..\HARDWARE\MPU9250 -I..\iNEMO_AHRS_v121\inc -I..\HARDWARE\TIMER -I..\HARDWARE\ENCODER-I D:\Keil_v5\ARM\RV31\INC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5A38F9F3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\FUNCTION -I..\STM32_USB-FS-Device_Driver\inc -I..\USB\inc -I..\HARDWARE\IIC -I..\HARDWARE\MPU9250 -I..\iNEMO_AHRS_v121\inc -I..\HARDWARE\TIMER -I..\HARDWARE\ENCODER-I D:\Keil_v5\ARM\RV31\INC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
 I (BSP_init.h)(0x5A2A4D34)
 I (stm32f10x.h)(0x4D783CB4)
@@ -132,7 +132,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x5051A0AE)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\BSP_init.c)(0x5A38E7CE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\FUNCTION -I..\STM32_USB-FS-Device_Driver\inc -I..\USB\inc -I..\HARDWARE\IIC -I..\HARDWARE\MPU9250 -I..\iNEMO_AHRS_v121\inc -I..\HARDWARE\TIMER -I..\HARDWARE\ENCODER-I D:\Keil_v5\ARM\RV31\INC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\bsp_init.o --omf_browse ..\obj\bsp_init.crf --depend ..\obj\bsp_init.d)
+F (.\BSP_init.c)(0x5A38FC58)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\FUNCTION -I..\STM32_USB-FS-Device_Driver\inc -I..\USB\inc -I..\HARDWARE\IIC -I..\HARDWARE\MPU9250 -I..\iNEMO_AHRS_v121\inc -I..\HARDWARE\TIMER -I..\HARDWARE\ENCODER-I D:\Keil_v5\ARM\RV31\INC-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0-DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\bsp_init.o --omf_browse ..\obj\bsp_init.crf --depend ..\obj\bsp_init.d)
 I (stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x53463A44)

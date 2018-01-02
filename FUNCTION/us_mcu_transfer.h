@@ -78,56 +78,65 @@
 #define US_MCU_RSA_LOCK_CONFIG			0X38
 
 
-#define US_MCU_UPDATA_READ					0X39
-#define US_MCU_UPDATA_WRITE					0X40
-#define US_MCU_UPDATA_CONFIG				0X41
+#define US_MCU_UPDATA_READ				0X39
+#define US_MCU_UPDATA_WRITE			0X40
+#define US_MCU_UPDATA_CONFIG			0X41
 
 
-#define US_USART_GPS_READ						0x42
-#define US_USART_GPS_WRITE					0x43
-#define US_USART_GPS_CONFIG					0x44
+#define US_USART_GPS_READ				0x42
+#define US_USART_GPS_WRITE				0x43
+#define US_USART_GPS_CONFIG			0x44
 
-#define US_MCU_CONF_WRITE						0x45
+#define US_MCU_CONF_WRITE				0x45
 
-#define SNS_MCU_DAC_WRITE						0x46
-#define SNS_MCU_DAC_READ						0x47
-#define SNS_MCU_DAC_CONFIG					0x48
+#define SNS_MCU_DAC_WRITE				0x46
+#define SNS_MCU_DAC_READ				0x47
+#define SNS_MCU_DAC_CONFIG				0x48
 
-#define SNS_MCU_SENSOR_WRITE				0x49
-#define SNS_MCU_SENSOR_READ					0x50
-#define SNS_MCU_SENSOR_CONFIG				0x51
+#define SNS_MCU_SENSOR_WRITE			0x49
+#define SNS_MCU_SENSOR_READ			0x50
+#define SNS_MCU_SENSOR_CONFIG			0x51
 
-#define US_MCU_FLASH_WRITE					0X52
-#define US_MCU_FLASH_READ						0X53
-#define US_MCU_FLASH_CONFIG					0X54
+#define US_MCU_FLASH_WRITE				0X52
+#define US_MCU_FLASH_READ				0X53
+#define US_MCU_FLASH_CONFIG			0X54
 
-#define US_MCU_FLASH_LOAD						0X55
-#define US_MCU_FLASH_STORE					0X56
-#define US_MCU_FLASH_FILL						0X57
-#define US_MCU_FLASH_FETCH					0X58
+#define US_MCU_FLASH_LOAD				0X55
+#define US_MCU_FLASH_STORE				0X56
+#define US_MCU_FLASH_FILL				0X57
+#define US_MCU_FLASH_FETCH				0X58
 
-#define IAP_MCU_NEED_HELP						0X59
+#define IAP_MCU_NEED_HELP				0X59
 
 #define SNS_iNEMO_SENSOR_WRITE			0x60
 
-#define SJS_ROBOT_ENCODER_R					0x61
-#define SJS_ROBOT_ENCODER_L					0x62
-#define SJS_ROBOT_ENCODER_WRITE			0x63
+#define SJS_ROBOT_ENCODER_R			0x61
+#define SJS_ROBOT_ENCODER_L			0x62
+#define SJS_ROBOT_ENCODER_WRITE		0x63
 #define SJS_ROBOT_ENCODER_READ			0x64
 #define SJS_ROBOT_ENCODER_CONFIG		0x65
-#define SJS_ROBOT_ENCODER						0x66
-#define SJS_ROBOT_PWR								0x67
-#define SJS_ROBOT_SPEED							0x68
-#define SJS_ROBOT_WHISTLED					0x69
-#define SJS_ROBOT_JOYSTICK					0x70
-#define SJS_ROBOT_ULT								0x71
+#define SJS_ROBOT_ENCODER				0x66
+#define SJS_ROBOT_PWR					0x67
+#define SJS_ROBOT_SPEED					0x68
+#define SJS_ROBOT_WHISTLED				0x69
+#define SJS_ROBOT_JOYSTICK				0x70
+#define SJS_ROBOT_ULT					0x71
+
+#define SJS_MARM_ENABLE					0x72
+#define SJS_MARM_SPEED					0x73
+#define SJS_MARM_DIR					0x74
+
+#define SJS_MARM_CTRL					0x75
 
 
+#define FREQ_TEST
 
+#define MY_FREQ							100000
+#define MARM_VN							5
 
 
 /*CAR INFO*/
-#define US_BACK_CAR								0xC1
+#define US_BACK_CAR						0xC1
 #define US_TIRE_CORNER_INFO				0xC2
 
 /*ID CODER*/
@@ -178,7 +187,7 @@
 #define ApplicationAddress    				IMAGE_MAIN_ADDR
 
 #define MCU_FLASH_DATA_ADDR			0x0800C000	
-#define MCU_FLASH_DATA_CACHE		0x0800E800
+#define MCU_FLASH_DATA_CACHE			0x0800E800
 
 #define SJS_MCU_UPDATA_ADDR			0x0800C000
 #define SJS_MCU_VERSION_ADDR			0x08014000
@@ -269,6 +278,15 @@ typedef enum _MCU_DEVICE_LIST{
 	MCU_UPDATA = 38
 }MCU_DEVICE_LIST;
 
+typedef enum _MCU_DEVICE_EX_LIST{	
+	/*MCU GPIO*/
+	/*MCU GPIO IN DEV*/
+	SJS_M_ARM_A = 41,
+	SJS_M_ARM_B = 42,
+	SJS_M_ARM_C = 43,
+	SJS_M_ARM = 44
+}MCU_DEVICE_EX_LIST;
+
 
 
 typedef struct _CAR_INFO{
@@ -308,14 +326,6 @@ typedef struct _SJS_MOTION_STATE{
 	unsigned short left[4];
 	unsigned short right[4];
 }SJS_MOTION_STATE;
-
-//young
-typedef struct _SJS_MOVE_STATE{
-	unsigned long long id;
-	int x_position;
-	int y_position;
-	int yaw;
-}SJS_MOVE_STATE;
 
 typedef struct _SJS_ULT_STATE{
 	unsigned long long id;
@@ -378,18 +388,30 @@ typedef enum __ENCODER_FUC{
 
 typedef enum __PWR_FUC{
 	ROBOT_PWR_EN	= 0,
-	ROBOT_PWR_DIS = 1
+	ROBOT_PWR_DIS = 1,
+	ROBOT_PWR_STP = 2
 }PWR_FUC;
 
+typedef enum __SJS_M_ARM_STATUS{
+	M_IDLE = 0,
+	M_BUSY = 1
+}SJS_M_ARM_STATUS;
+
+
 typedef enum __SPEED_FUC{
-	SPEED_UP	= 0,
+	SPEED_UP		= 0,
 	SPEED_DOWN 	= 1
 }SPEED_FUC;
 
 typedef enum __WHISTLE_FUC{
 	WHISTLE_ON		= 0,
 	WHISTLE_OFF 	= 1
-}__WHISTLE_FUC;
+}WHISTLE_FUC;
+
+typedef enum __MOTOR_DIR_FUC{
+	M_FWD = 1,
+	M_REV = 2
+}MOTOR_DIR_FUC;
 
 typedef struct __ROBOT_JOYSTICK_TRANS{
 	unsigned long long cmd;
@@ -427,6 +449,14 @@ typedef struct _US_DAC_CONFIG{
 	unsigned int volume;
 	unsigned int addr;
 }US_DAC_CONFIG;
+
+typedef struct _SJS_MARM_CTRLLER{
+	unsigned int step[3];				//s
+	unsigned int DIR[3];
+	unsigned short frequency;				//Hz
+	unsigned short STG[3];
+}SJS_MARM_CTRLLER;
+
 
 typedef enum FLASH_UPDATA_STATUS{
 	FLASH_UNLOCK = 0,
@@ -511,12 +541,15 @@ int us_mcu_send_cpu_id(void);
 int us_mcu_cpuid_init(void);
 int us_dev_init(void);
 
-//young
-int sjs_robot_encoder_send(unsigned char cmd, int x, int y, int yaw, unsigned long long id);
+int sjs_robot_encoder_send(unsigned char cmd, unsigned short left, unsigned short right, unsigned long long id);
 int sjs_robot_ULT_send(unsigned char cmd, unsigned int left, unsigned int right, unsigned long long id);
 
 int robot_ultrasonic_enable(void);
+
+int sjs_marm_pwr(unsigned char dev, unsigned char data);
+
+
 /*US Func*/
 int us_dev_error(unsigned char dev, unsigned char* func_name, int name_len, int status);
-int sjs_robot_usb_send(unsigned char cmd, unsigned char* data, int lenght, int status);
+int sjs_marm_usb_send(unsigned char cmd, unsigned char dev, unsigned char* data, int lenght, int status);
 #endif

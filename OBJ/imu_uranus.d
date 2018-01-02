@@ -1,9 +1,9 @@
 ..\obj\imu_uranus.o: ..\FUNCTION\imu_uranus.c
-..\obj\imu_uranus.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\imu_uranus.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 ..\obj\imu_uranus.o: ..\FUNCTION\imu_uranus.h
 ..\obj\imu_uranus.o: ..\USER\stm32f10x.h
 ..\obj\imu_uranus.o: ..\CORE\core_cm3.h
-..\obj\imu_uranus.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\imu_uranus.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\imu_uranus.o: ..\USER\system_stm32f10x.h
 ..\obj\imu_uranus.o: ..\USER\stm32f10x_conf.h
 ..\obj\imu_uranus.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h

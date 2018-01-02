@@ -45,7 +45,8 @@ void Set_System(void);
 void BSP_Configuration(void);
 void bsp_Idle(void);
 	
-
+	
+int SJS_MARM_Gpio_Init(void);
 void Get_SerialNum(void);
 void USB_Cable_Config (FunctionalState NewState);
 void Enter_LowPowerMode(void);

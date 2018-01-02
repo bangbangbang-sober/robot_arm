@@ -7,6 +7,8 @@
 #include "PID.h"
 #include "delay.h"
 
+#include "us_mcu_transfer.h"
+
 #define U16_MAX    ((u16)65535u)
 #define U32_MAX    ((u32)4294967295uL)
 

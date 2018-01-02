@@ -75,19 +75,14 @@ void odometry(float right,float left)
 		oriention = oriention + oriention_interval + (3.0/360.0) * oriention_interval;						//计算出里程计方向角
 		oriention_1 = oriention + 0.5f * oriention_interval;	//里程计方向角数据位数变化，用于三角函数计算
 
-//		printf("yaw = %f \r\n",yaw);
-
 		sin_ = sin(oriention_1);			//计算出采样时间内x坐标
 		cos_ = cos(oriention_1);			//计算出采样时间内y坐标
 
 		pos_y = pos_y + delta_distance * const_frame * cos_ ;	//计算出里程计y坐标
 		pos_x = pos_x + delta_distance * const_frame * sin_ ;	//计算出里程计x坐标 
 		
-		position_x = -pos_x;
-		position_y = pos_y;
-		
-		position_x = position_x * 1.19;
-		position_y = position_y * 1.19;
+		position_x = (-pos_x) * 1.19;	//内外轮周长之比
+		position_y = pos_y * 1.19;
 			
 //		printf("position_x = %f , position_y = %f \r\n",(position_x ), (position_y));
 		

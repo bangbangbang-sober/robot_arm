@@ -95,7 +95,7 @@ void TIM2_IRQHandler(void)
 		//US_MCU_STATUS = MCU_DEV_LINK;
 		us_mcu_link_check();
 		us_mcu_ping();					//US MCU Ping
-		us_mcu_g_sensor_timeout();
+		//us_mcu_g_sensor_timeout();
 		//us_mcu_usart_timeout();		//Usart Timeout
 		timer++;						//Tick
 		
@@ -111,9 +111,9 @@ void TIM5_IRQHandler(void)
 	//young
 	if( TIM_GetITStatus(TIM5 , TIM_IT_Update) != RESET ) 
 	{
-		if(ROBOT_ENCODER_EN == 1){
-			sjs_robot_encoder_send(SJS_ROBOT_ENCODER, (int)position_x , (int)position_y, (int)((oriention * (180/pi))*100), timer);			
-		}
+//		if(ROBOT_ENCODER_EN == 1){
+//			sjs_robot_encoder_send(SJS_ROBOT_ENCODER, (int)position_x , (int)position_y, (int)((oriention * (180/pi))*100), timer);			
+//		}
 
 		TIM_ClearITPendingBit(TIM5 , TIM_IT_Update);
 	}

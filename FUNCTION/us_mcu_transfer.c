@@ -2,17 +2,26 @@
 #include <string.h>
 #include "stm32f10x.h"
 #include "usb_lib.h"
+//#include "usb_pwr.h"
 
 #include "us_mcu_transfer.h"
 #include "us_can_zyt.h"
 #include "usb_pwr.h"
 
+#include "us_aes_func.h"	//AES 
+
+#include "libMCUAuthenticate.h"
+
 #include "usart.h"
-#include "IIC_MPU9250.h"
+
+#include "iic_mpu9250.h"
+
+#include "timer_function.h"
 
 
+#define CAN_ZYT					1
 
-unsigned char MCU_VERSION[8] = "V1.1";
+unsigned char MCU_VERSION[8] = "V1.0";
 
 
 extern unsigned long long timer;
@@ -41,6 +50,8 @@ int u_rear = 0;
 
 extern unsigned char USART_SEND_BUFF[USART_MAX_BUFF_SEND];
 extern int usart_lendth;
+
+//void TIM6_Configuration(uint16_t freq);
 
 void cp_mcu_delay_ms(u16 time)
 {
@@ -86,6 +97,31 @@ int us_mcu_uart_coder(UART_INFO *send)
 }
 
 
+int sjs_marm_usb_send(unsigned char cmd, unsigned char dev, unsigned char* data, int lenght, int status)
+{
+	int ret = 0;
+	US_DEV_TRANS trans = {0};
+
+	if(data == NULL || lenght == 0){
+		ret = -1;
+	}
+	if(!ret){
+		memcpy(trans.data, data, lenght);
+	}
+	if(!ret){
+		trans.cmd_id		= status;
+		trans.dev			= dev;
+		trans.length		= lenght;
+		us_mcu_rc_buff_enter(cmd, (unsigned char*)&trans, sizeof(US_DEV_TRANS));
+	}
+
+	if(ret < 0){		
+		//us_dev_error(MCU_CONFIG, (unsigned char *)__func__, strlen(__func__) + 1, ret);
+	}
+
+	return ret;
+}
+
 int us_dev_error(unsigned char dev, unsigned char* func_name, int name_len, int status)
 {
 	int ret = 0;
@@ -110,27 +146,24 @@ int us_dev_error(unsigned char dev, unsigned char* func_name, int name_len, int 
 	return ret;
 }
 
-
-int sjs_robot_encoder_send(unsigned char cmd, int x, int y, int yaw, unsigned long long id)
+int sjs_robot_encoder_send(unsigned char cmd, unsigned short left, unsigned short right, unsigned long long id)
 {
 	int ret = 0;
 	US_DEV_TRANS trans_encoder = {0};
-	SJS_MOVE_STATE move_state={0};
+	SJS_MOTION_STATE motion_state = {0};
 	//memset((char *)&motion_state, 0xff, sizeof(motion_state));
 
 	if(!ret){
-		move_state.id = id;
-		move_state.x_position = x;
-		move_state.y_position = y;
-		move_state.yaw = yaw;
-		memcpy(trans_encoder.data, (unsigned char *)&move_state, sizeof(SJS_MOVE_STATE));
+		motion_state.id = id;
+		motion_state.left[0] = left;
+		motion_state.right[0] = right;
+		memcpy(trans_encoder.data, (unsigned char *)&motion_state, sizeof(SJS_MOTION_STATE));
 		
-		trans_encoder.length		= sizeof(SJS_MOVE_STATE);
+		trans_encoder.length		= sizeof(SJS_MOTION_STATE);
 	}
-	
 	if(!ret){
 		trans_encoder.cmd_id		= 0;
-		trans_encoder.dev				= cmd;
+		trans_encoder.dev			= cmd;
 		us_mcu_rc_buff_enter(cmd, (unsigned char*)&trans_encoder, sizeof(US_DEV_TRANS));
 	}
 
@@ -171,30 +204,6 @@ int sjs_robot_ULT_send(unsigned char cmd, unsigned int left, unsigned int right,
 }
 
 
-int sjs_robot_usb_send(unsigned char cmd, unsigned char* data, int lenght, int status)
-{
-	int ret = 0;
-	US_DEV_TRANS trans = {0};
-
-	if(data == NULL || lenght == 0){
-		ret = -1;
-	}
-	if(!ret){
-		memcpy(trans.data, data, lenght);
-	}
-	if(!ret){
-		trans.cmd_id		= status;
-		trans.dev			= cmd;
-		trans.length		= lenght;
-		us_mcu_rc_buff_enter(cmd, (unsigned char*)&trans, sizeof(US_DEV_TRANS));
-	}
-
-	if(ret < 0){		
-		//us_dev_error(MCU_CONFIG, (unsigned char *)__func__, strlen(__func__) + 1, ret);
-	}
-
-	return ret;
-}
 
 int us_usart_rc_buff_enter(unsigned char data)
 {
@@ -321,7 +330,7 @@ int us_dev_trans_config(unsigned char type, US_DEV_TRANS *trans_buf)
 		if(DEV_STATUS_CTRL[dev]	!= DEV_NULL){
 			if(trans_buf->data[0] == DEV_OFF){
 				DEV_STATUS_CTRL[dev] 	= 	trans_buf->data[0];
-			}else if(trans_buf->data[0] == 	DEV_ON){
+			}else if(trans_buf->data[0] 		== 	DEV_ON){
 				DEV_STATUS_CTRL[dev] 	= 	trans_buf->data[0];
 			}
 			trans_send.status	= 0;
@@ -333,7 +342,7 @@ int us_dev_trans_config(unsigned char type, US_DEV_TRANS *trans_buf)
 	}
 
 	trans_send.cmd_id		= trans_buf->cmd_id;
-	trans_send.dev			= trans_buf->dev;
+	trans_send.dev		= trans_buf->dev;
 	us_mcu_rc_buff_enter(type, (unsigned char*)&trans_send, sizeof(US_DEV_TRANS));
 
 
@@ -368,6 +377,140 @@ int us_mcu_input_data(unsigned char *input, unsigned int *length)
 
 	return ret;
 }
+
+int us_mcu_aes_trans(unsigned char type, US_DEV_TRANS *trans_buf)
+{
+	int ret = 0;
+	
+	unsigned char input[64] = {0}, output[64] = {0};
+	unsigned int input_length = 0, output_length;
+
+	US_DEV_TRANS trans_send = {0};
+
+	if(trans_buf == NULL){
+		ret = -1;
+	}
+	
+	if(!ret){
+		if(us_mcu_input_data(input, &input_length) < 0){
+			ret = -2;
+		}
+	}
+	if(!ret){
+		if(MCUAuthenticateEncode(input, output, &output_length) < 0){
+			ret = -3;
+		}
+	}
+
+	if(!ret){
+		trans_send.length		= output_length;
+		trans_send.cmd_id		= trans_buf->cmd_id;
+		trans_send.dev		= trans_buf->dev;
+		trans_send.status		= 0;
+
+		memcpy(trans_send.data, output, output_length);
+		us_mcu_rc_buff_enter(type, (unsigned char*)&trans_send, sizeof(US_DEV_TRANS));
+	}
+/***************************************************************************/
+#if 0
+	ret = STM32_AES_CBC_Decrypt( output, output_length, Key, IV, sizeof(IV), OutputMessage,
+						   &OutputMessageLength);
+
+	if (ret == AES_SUCCESS){
+		if (Buffercmp(input, OutputMessage, OutputMessageLength) == PASSED){
+		/* add application traintment in case of AES CTR encrption is passed */
+			ret = 0;
+		}else{
+		/* add application traintment in case of AES CTR encrption is failed */
+			ret = 2;
+			
+		}
+	}else{
+	/* Add application traintment in case of encryption/decryption not success possible values
+	*  of status:
+	* AES_ERR_BAD_CONTEXT, AES_ERR_BAD_PARAMETER, AES_ERR_BAD_OPERATION
+	*/
+	}
+#endif
+
+#if 0
+
+	/* Encrypt DATA with AES in CTR mode */
+	 status = STM32_AES_CBC_Encrypt( (uint8_t *) Plaintext, PLAINTEXT_LENGTH, Key, IV, sizeof(IV), OutputMessage,
+							   &OutputMessageLength);
+	 if (status == AES_SUCCESS)
+	 {
+	 	ret = 0;
+	 }
+	 else
+	 {
+		ret = -1;
+	 }
+
+	status = STM32_AES_CBC_Decrypt( (uint8_t *) output, output_length, Key, IV, sizeof(IV), D_OUT,
+							   &D_LENG);
+	 if (status == AES_SUCCESS)
+	 {
+	   if (Buffercmp(input, D_OUT, input_length) == PASSED)
+	   {
+		 /* add application traintment in case of AES CTR encrption is passed */
+		 ret = 22;
+	   }
+	   else
+	   {
+		 /* add application traintment in case of AES CTR encrption is failed */
+		ret = 99;
+	   }
+	 }
+	 else
+	 {
+	  	ret = -2;
+	 }
+
+#endif 
+
+	if(ret < 0){
+		us_dev_error(MCU_CONFIG, (unsigned char *)__func__, strlen(__func__) + 1, ret);
+	}
+
+	return ret;
+	
+}
+
+int us_mcu_write_coderid(unsigned char type, US_DEV_TRANS *trans_buf)
+{
+	int ret = 0;
+
+	coder_length = trans_buf->length;
+	memcpy(coder_id, trans_buf->data, trans_buf->length);
+
+	return ret;
+}
+
+unsigned int write_flash[15];
+
+int us_mcu_rsa_config(unsigned char type, US_DEV_TRANS *trans_buf)
+{
+	int ret = 0, n = 0;
+	unsigned char rsa_length = trans_buf->length;
+	
+	memcpy((unsigned char *)write_flash, trans_buf->data, rsa_length);
+
+	FLASH_Unlock();
+	FLASH_ErasePage  (STM32FLASH_EN_ID_START_ADDR);
+		
+	for(n = 0;n < rsa_length/4; n++){
+		if( FLASH_WaitForLastOperation(100000) != FLASH_TIMEOUT )
+		{
+			FLASH_ClearFlag(FLASH_FLAG_EOP|FLASH_FLAG_PGERR|FLASH_FLAG_WRPRTERR);
+		}
+		FLASH_ProgramWord(STM32FLASH_EN_ID_START_ADDR+4*n, write_flash[n]);
+	}
+	FLASH_Lock();
+
+	return ret;
+}
+
 
 
 #define  MY_PAGE_SIZE	0X800
@@ -516,6 +659,88 @@ int us_dev_host_id_get(unsigned char *data, unsigned char length)
 }
 
 
+void sjs_dac_pwr_on(void)
+{
+	//GPIO_SetBits(GPIOC, GPIO_Pin_0); //dac on
+}
+
+void sjs_dac_pwr_off(void)
+{
+	//GPIO_ResetBits(GPIOC, GPIO_Pin_0); //dac on
+}
+
+#if 1
+unsigned int dac_frequency = 0;
+unsigned int dac_addr = 0;
+unsigned int dac_num = 0;
+unsigned int dac_delay = 0;
+unsigned int dac_times = 0;
+unsigned int dac_volume = 2;
+unsigned int dac_play = 0;
+unsigned int da_i = 0;
+unsigned int dac_t_i = 0;
+
+
+int sns_mcu_dac_decoder(unsigned char type, unsigned char *data)
+{
+	int ret  = 0;
+	US_DAC_CONFIG conf = {0};
+
+	switch(type){
+		case SNS_MCU_DAC_WRITE:
+			if(data[0] == DAC_EN){
+				sjs_dac_pwr_on();
+				dac_play = 1;
+			}else if(data[0] == DAC_DIS){
+				//dac_play = 0;
+				//da_i = 0;
+				//dac_t_i = 0;
+				//sjs_dac_pwr_off();
+				dac_t_i  = 0;
+				dac_times = 1;
+			}
+			break;
+		case SNS_MCU_DAC_READ:
+			
+			break;
+		case SNS_MCU_DAC_CONFIG:
+			memcpy(&conf, data, sizeof(US_DAC_CONFIG));
+			if((dac_frequency != conf.frequency) || (dac_num != conf.length ) || (dac_delay != conf.delay) ||(dac_addr != conf.addr)){
+				dac_play = 0;
+				dac_num = conf.length;
+				dac_delay = conf.delay;
+				dac_times = conf.times;
+				dac_frequency = conf.frequency;
+				if(conf.volume <= 0){
+					dac_volume = 1;
+				}else{
+					dac_volume = conf.volume;
+				}
+				da_i = 0;
+				dac_t_i = 0;
+				dac_addr = conf.addr;
+				
+				//TIM6_Configuration(dac_frequency);
+			}else{
+				dac_t_i = 0;
+				dac_times = conf.times;
+				if(conf.volume <= 0){
+					dac_volume = 1;
+				}else{
+					dac_volume = conf.volume;
+				}
+			}
+						
+			us_dev_error(SNS_MCU_DAC_CONFIG, (unsigned char *)__func__, strlen(__func__) + 1, conf.frequency);
+			break;
+		default:
+			break;
+	}
+
+	return ret;
+}
+#endif 
+
 extern int SENSOR_TIMESPS;
 
 int sns_mcu_sensor_decoder(unsigned char type, unsigned char *data)
@@ -550,83 +775,254 @@ int sns_mcu_sensor_decoder(unsigned char type, unsigned char *data)
 	return ret;
 }
 
-extern int ROBOT_ENCODER_EN;
+/****************************************************************/
+/*
+	A:PA2 PA3       PWM:PA6
+	B:PB8 PB9       PWM:PA0
+	C:PA9 PA10     PWM:PC6
 
-int robot_mcu_Encoder_decoder(unsigned char type, unsigned char *data)
+*/
+
+int sjs_marm_pwr(unsigned char dev, unsigned char data)
 {
-	int ret  = 0;
+	int ret = 0;
+	
+	if(dev == SJS_M_ARM){
+		if(data == ROBOT_PWR_EN){
+			GPIO_SetBits(GPIOA, GPIO_Pin_4);		//A
+			GPIO_SetBits(GPIOB, GPIO_Pin_8);		//B
+			GPIO_SetBits(GPIOA, GPIO_Pin_9);		//C
+			us_dev_error(MCU_CONFIG, "MARM PWR ON", 12, ROBOT_PWR_EN);	
+		}else if(data == ROBOT_PWR_DIS){
+			GPIO_ResetBits(GPIOA, GPIO_Pin_4);		//A
+			GPIO_ResetBits(GPIOB, GPIO_Pin_8);		//B
+			GPIO_ResetBits(GPIOA, GPIO_Pin_9);		//C
+			us_dev_error(MCU_CONFIG, "MARM PWR OFF", 13, ROBOT_PWR_DIS);	
+		}else if(data == ROBOT_PWR_STP){
+			TIM_Cmd(TIM3, DISABLE);
+			us_dev_error(MCU_CONFIG, "MARM STOP", 10, ROBOT_PWR_STP);	
+		}
+	}else if(dev == SJS_M_ARM_A){
+		if(data == ROBOT_PWR_EN){
+			//TIM_Cmd(TIM3, ENABLE);
+			
+			GPIO_SetBits(GPIOA, GPIO_Pin_4);		//A
+			us_dev_error(MCU_CONFIG, "MARM A ON", 10, ROBOT_PWR_EN);	
+		}else if(data == ROBOT_PWR_DIS){
+			
+			GPIO_ResetBits(GPIOA, GPIO_Pin_4);		//A
+			//TIM_Cmd(TIM3, DISABLE);
+			us_dev_error(MCU_CONFIG, "MARM A OFF", 11, ROBOT_PWR_DIS);	
+		}
+	}else if(dev == SJS_M_ARM_B){
+		if(data == ROBOT_PWR_EN){
+			GPIO_SetBits(GPIOB, GPIO_Pin_8);		//B
+			
+			us_dev_error(MCU_CONFIG, "MARM B ON", 10, ROBOT_PWR_EN);	
+		}else if(data == ROBOT_PWR_DIS){
+			GPIO_ResetBits(GPIOB, GPIO_Pin_8);		//B
+			
+			us_dev_error(MCU_CONFIG, "MARM B OFF", 11, ROBOT_PWR_DIS);	
+		}
+	}else if(dev == SJS_M_ARM_C){
+		if(data == ROBOT_PWR_EN){
+			GPIO_SetBits(GPIOA, GPIO_Pin_9);		//C
+			
+			us_dev_error(MCU_CONFIG, "MARM C ON", 10, ROBOT_PWR_EN);	
+		}else if(data == ROBOT_PWR_DIS){
+			GPIO_ResetBits(GPIOA, GPIO_Pin_9);		//C
+			
+			us_dev_error(MCU_CONFIG, "MARM C OFF", 11, ROBOT_PWR_DIS);	
+		}
+	}
+	return ret;
+}
+
+int sjs_marm_pwr_enable(unsigned char type, US_DEV_TRANS *trans_buf)
+{
+	int ret = 0;
+	unsigned char dev = trans_buf->dev;
+	unsigned char data = trans_buf->data[0];
+
+	sjs_marm_pwr(dev, data);
+	
+	us_dev_error(MCU_CONFIG, "MARM PWR", 9, data);	
+
+	return ret;
+}
+
+int sjs_marm_dir(unsigned char dev, unsigned char data)
+{
+	int ret = 0;
+	
+	if(dev == SJS_M_ARM_A){
+		if(data == M_FWD){
+			GPIO_SetBits(GPIOA, GPIO_Pin_3);
+			
+			us_dev_error(MCU_CONFIG, "MARM A M_FWD", 13, M_FWD);	
+		}else if(data == M_REV){
+			GPIO_ResetBits(GPIOA, GPIO_Pin_3);
+			
+			us_dev_error(MCU_CONFIG, "MARM A M_REV", 13, M_REV);	
+		}
+	}else if(dev == SJS_M_ARM_B){
+		if(data == M_FWD){
+			GPIO_SetBits(GPIOB, GPIO_Pin_9);
+			
+			us_dev_error(MCU_CONFIG, "MARM B M_FWD", 13, M_FWD);	
+		}else if(data == M_REV){
+			GPIO_ResetBits(GPIOB, GPIO_Pin_9);
+			
+			us_dev_error(MCU_CONFIG, "MARM B M_REV", 13, M_REV);	
+		}
+	}else if(dev == SJS_M_ARM_C){
+		if(data == M_FWD){
+			GPIO_SetBits(GPIOA, GPIO_Pin_10);
+			
+			us_dev_error(MCU_CONFIG, "MARM C M_FWD", 13, M_FWD);	
+		}else if(data == M_REV){
+			GPIO_ResetBits(GPIOA, GPIO_Pin_10);
+			
+			us_dev_error(MCU_CONFIG, "MARM C M_REV", 13, M_REV);	
+		}
+	}
+	return ret;
+}
+
+int sjs_marm_dir_decoder(unsigned char type, US_DEV_TRANS *trans_buf)
+{
+	int ret = 0;
+	unsigned char dev = trans_buf->dev;
+	unsigned char data = trans_buf->data[0];
+
+	sjs_marm_dir(dev, data);
+
+	return ret;
+}
+
+int sjs_marm_speed_decoder(unsigned char type, US_DEV_TRANS *trans_buf)
+{
+	int ret = 0;
 	int timesps = 0;
-
-	switch(type){
-		case SJS_ROBOT_ENCODER_WRITE:
-			if(data[0] == ENCODER_EN){
-				ROBOT_ENCODER_EN = 1;
-			}else if(data[0] == ENCODER_DIS){
-				ROBOT_ENCODER_EN = 0;
-			}
-			break;
-		case SJS_ROBOT_ENCODER_READ:
-			
-			break;
-		case SJS_ROBOT_ENCODER_CONFIG:
-			memcpy((char *)&timesps, data, 4);
-			if((timesps > 0) && (timesps <=1000)){
-				us_init_timer5(timesps);
-			}
-			
-			break;
-		default:
-			break;
-	}
+	unsigned char dev = trans_buf->dev;
+	
+	memcpy((char *)&timesps, trans_buf->data, 4);
+	
+	if((timesps >= 0) && (timesps <=2000)){
 		
-	us_dev_error(type, (unsigned char *)__func__, strlen(__func__) + 1, ROBOT_ENCODER_EN);
-
+		if(dev == SJS_M_ARM_A){
+			//us_timer3_startup(timesps, 1000);
+			us_init_timer3(100000/timesps - 1);
+			TIM_Cmd(TIM3, ENABLE);
+		}else if(dev == SJS_M_ARM_B){
+			
+			//us_init_timer3(100000/timesps - 1);
+		}else if(dev == SJS_M_ARM_C){
+			//us_init_timer3(100000/timesps - 1);
+		}
+		
+	} 
+	
+	us_dev_error(MCU_CONFIG, "MARM SPEED", 11, timesps);
+	
 	return ret;
 }
-int robot_mcu_pwr_decoder(unsigned char type, unsigned char *data)
+
+unsigned int A_Step_Set = 0, A_Step_Num = 0;
+unsigned int B_Step_Set = 0, B_Step_Num = 0;
+unsigned int C_Step_Set = 0, C_Step_Num = 0;
+
+
+
+u16 A_FREQ = 0, B_FREQ = 0, C_FREQ = 0;
+
+u16 START_FREQ = 100;
+
+int sjs_marm_ctrl(unsigned char type, US_DEV_TRANS *trans_buf)
 {
 	int ret = 0;
-	
-	if(data[0] == ROBOT_PWR_EN){
-		GPIO_SetBits(GPIOA, GPIO_Pin_0);
-		cp_mcu_delay_ms(400);
-		GPIO_ResetBits(GPIOA, GPIO_Pin_0);
- 	}else if(data[0] == ROBOT_PWR_DIS){
-		GPIO_ResetBits(GPIOA, GPIO_Pin_0);
- 	}
 
-	return ret;
-}
+	SJS_MARM_CTRLLER mctrl = {0};
+	unsigned int A_STEP = 0, A_DIR = 0;
+	unsigned int B_STEP = 0, B_DIR = 0;
+	unsigned int C_STEP = 0, C_DIR = 0;
+	unsigned int M_frequency = 0;
+	unsigned short STG_A = 0, STG_B = 0, STG_C = 0;
 
-int robot_mcu_speed_decoder(unsigned char type, unsigned char *data)
-{
-	int ret = 0;
+	memcpy(&mctrl, trans_buf->data, sizeof(SJS_MARM_CTRLLER));
+	A_STEP = mctrl.step[0];
+	B_STEP = mctrl.step[1];
+	C_STEP = mctrl.step[2];
+
+	A_DIR   = mctrl.DIR[0];
+	B_DIR   = mctrl.DIR[1];
+	C_DIR   = mctrl.DIR[2];
+
+	STG_A   = mctrl.STG[0];
+	STG_B   = mctrl.STG[1];
+	STG_C   = mctrl.STG[2];
+
+	M_frequency = mctrl.frequency;
+
+	//close A B C
+	sjs_marm_pwr(SJS_M_ARM, ROBOT_PWR_DIS);
 	
-	if(data[0] == SPEED_UP){
-		GPIO_SetBits(GPIOA, GPIO_Pin_1);
-		cp_mcu_delay_ms(100);
-		GPIO_ResetBits(GPIOA, GPIO_Pin_1);
-	}else if(data[0] == SPEED_DOWN){
-		GPIO_SetBits(GPIOA, GPIO_Pin_2);
-		cp_mcu_delay_ms(100);
-		GPIO_ResetBits(GPIOA, GPIO_Pin_2);
+	//set A B C Dir without 0
+	if(A_DIR != 0 && ((A_DIR == M_FWD) || (A_DIR == M_REV))){
+		sjs_marm_dir(SJS_M_ARM_A, A_DIR);
 	}
-	
-	return ret;
-}
-
-int robot_mcu_whistled_decoder(unsigned char type, unsigned char *data)
-{
-	int ret = 0;
-	
-	if(data[0] == WHISTLE_ON){
-		GPIO_SetBits(GPIOA, GPIO_Pin_3);
-	}else if(data[0] == WHISTLE_OFF){
-		GPIO_ResetBits(GPIOA, GPIO_Pin_3);
+	if(B_DIR != 0 && ((B_DIR == M_FWD) || (B_DIR == M_REV))){
+		sjs_marm_dir(SJS_M_ARM_B, B_DIR);
 	}
+	if(C_DIR != 0 && ((C_DIR == M_FWD) || (C_DIR == M_REV))){
+		sjs_marm_dir(SJS_M_ARM_C, C_DIR);
+	}
+	//set A B C Step without 0
+	if(A_STEP != 0){
+		
+		sjs_marm_pwr(SJS_M_ARM_A, ROBOT_PWR_EN);
+		A_Step_Num = 0;
+		A_Step_Set = A_STEP*2/2.25;
+	}
+	if(B_STEP != 0){
+		
+		sjs_marm_pwr(SJS_M_ARM_B, ROBOT_PWR_EN);
+		B_Step_Num = 0;
+		B_Step_Set = B_STEP*2;
+	}
+	if(C_STEP != 0){
+		
+		sjs_marm_pwr(SJS_M_ARM_C, ROBOT_PWR_EN);
+		C_Step_Num = 0;
+		C_Step_Set = C_STEP*2;
+	}
+	if(STG_A != 0){
+		TIM_SetCompare1(TIM5, STG_A);
+		us_dev_error(MCU_CONFIG, "STG A", 6, STG_A);
+	}
+	if(STG_B != 0){
+		TIM_SetCompare2(TIM5, STG_B);		
+		us_dev_error(MCU_CONFIG, "STG B", 6, STG_A);
+	}
+	if(STG_C != 0){
+		TIM_SetCompare3(TIM5, STG_C);		
+		us_dev_error(MCU_CONFIG, "STG C", 6, STG_A);
+	}
+	//open A B C
+	
+	if(M_frequency != 0){
+		TIM_Cmd(TIM3, ENABLE);
+
+		A_FREQ = M_frequency;
+		B_FREQ = M_frequency;
+		C_FREQ = M_frequency;
+		us_dev_error(MCU_CONFIG, "MARM SPEED", 11, M_frequency);
+	}	
 
 	return ret;
 }
+	
+/****************************************************************/
 
 int robot_mcu_joystick_decoder(unsigned char type, unsigned char *data)
 {
@@ -705,29 +1101,17 @@ void us_mcu_recave(void)
 				case US_MCU_ID_READ:
 					sjs_mcu_id_get(type, (US_DEV_TRANS *)recv_ptr->data);
 					break;
-				#if 0
-				case SNS_MCU_SENSOR_WRITE:
-				case SNS_MCU_SENSOR_READ:
-				case SNS_MCU_SENSOR_CONFIG:
-					sns_mcu_sensor_decoder(type, recv_ptr->data);
+				case SJS_MARM_ENABLE:
+					sjs_marm_pwr_enable(type, (US_DEV_TRANS *)recv_ptr->data);
 					break;
-				#endif
-				case SJS_ROBOT_ENCODER_WRITE:
-				case SJS_ROBOT_ENCODER_READ:
-				case SJS_ROBOT_ENCODER_CONFIG:
-					robot_mcu_Encoder_decoder(type, recv_ptr->data);
+				case SJS_MARM_SPEED:
+					sjs_marm_speed_decoder(type, (US_DEV_TRANS *)recv_ptr->data);
 					break;
-				case SJS_ROBOT_PWR:
-					robot_mcu_pwr_decoder(type, recv_ptr->data);
+				case SJS_MARM_DIR:
+					sjs_marm_dir_decoder(type, (US_DEV_TRANS *)recv_ptr->data);
 					break;
-				case SJS_ROBOT_SPEED:
-					robot_mcu_speed_decoder(type, recv_ptr->data);
-					break;
-				case SJS_ROBOT_WHISTLED:
-					robot_mcu_whistled_decoder(type, recv_ptr->data);				
-					break;
-				case SJS_ROBOT_JOYSTICK:
-					robot_mcu_joystick_decoder(type, recv_ptr->data);
+				case SJS_MARM_CTRL:
+					sjs_marm_ctrl(type, (US_DEV_TRANS *)recv_ptr->data);
 					break;
 				case US_MCU_FLASH_LOAD:
 					us_mcu_flash_load(type, (US_FLASH_TRANS *)recv_ptr->data);

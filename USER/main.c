@@ -12,61 +12,37 @@
 #include "imu_uranus.h"
 
 UART_INFO send_buf;
-
-/***********************************************  输出  *****************************************************************/
-
-char odometry_data[21]={0};   //发送给串口的里程计数据数组
-
-float odometry_right=0,odometry_left=0;//串口得到的左右轮速度
-
-/***********************************************  输入  *****************************************************************/
-
-extern float position_x,position_y,oriention,velocity_linear,velocity_angular;         //计算得到的里程计数值
-
-extern u8 USART_RX_BUF[USART_REC_LEN];     //串口接收缓冲,最大USART_REC_LEN个字节.
-extern u16 USART_RX_STA;                   //串口接收状态标记	
-
-extern float Milemeter_L_Motor,Milemeter_R_Motor;     //dt时间内的左右轮速度,用于里程计计算
+extern unsigned char US_MCU_STATUS;
+u8 main_sta=0; 
 
 /*********************************************** imu data ***************************************************************/
 extern imu_data_t imu_data_3,imu_data_5;
 
-/***********************************************  变量  *****************************************************************/
 
-u8 main_sta=0; 				
+uint16_t OUTPUT_BUFFER[20]={1500,1800,2100,2400,2700,3000,3300,3600,3900,4095,
+							4095,3900,3600,3300,3000,2700,2400,2100,1800,1500};
 
-
-union recieveData  		//接收到的数据
-{
-	float d;    		 		//左右轮速度
-	unsigned char data[4];
-}leftdata,rightdata;  //接收的左右轮数据
-
-
-union odometry  	 		//里程计数据共用体
-{
-	float odoemtry_float;
-	unsigned char odometry_char[4];
-}x_data,y_data,theta_data,vel_linear,vel_angular;     
-//要发布的里程计数据，分别为：X，Y方向移动的距离，当前角度，线速度，角速度
-
-/****************************************************************************************************************/	
+uint16_t OUTPUT_BUFFER2[20]={500,800,1000,100,500,800,1000,100,500,800,
+							1000,100,500,800,1000,100,500,800,1000,100};
 
  int main(void)
  {	 
 		UART_INFO *send_ptr = &send_buf;
 		uint8_t *send = (uint8_t *)send_ptr;
 		int send_size = 0;
-	 
-	 BSP_Configuration();		//板级资源 初始化
-	 us_mcu_id_get();				//US Get MCU ID
+
+		BSP_Configuration();			//板级资源 初始化
+		us_mcu_id_get();				//US Get MCU ID
+
+		US_MCU_STATUS = MCU_DEV_INIT;
 
 	 while(1)
-	 {  		
-			delay_ms(200);
-			printf("imu_data_3--P/R/Y/P:%05d %05d %05d %05d \r\n",imu_data_3.pitch/100, imu_data_3.roll/100, imu_data_3.yaw/10, imu_data_3.presure);
-			printf("imu_data_5--P/R/Y/P:%05d %05d %05d %05d \r\n",imu_data_5.pitch/100, imu_data_5.roll/100, imu_data_5.yaw/10, imu_data_5.presure);
-			if(GetEPTxStatus(ENDP2) == EP_TX_NAK){
+	 {
+//			delay_ms(1000);
+//			printf("imu_data_5--G:%d \r\n",imu_data_5.accl[2]);
+//			printf("imu_data_3--P/R/Y/P:%d %d %d \r\n",imu_data_3.pitch/100, imu_data_3.roll/100, imu_data_3.yaw/10);
+			printf("imu_data_5--P/R/Y:%d %d %d \r\n",imu_data_5.pitch/100, imu_data_5.roll/100, imu_data_5.yaw/10);
+		  if(GetEPTxStatus(ENDP2) == EP_TX_NAK){
 				 if(us_mcu_rc_buff_delete(send_ptr) == OK){
 						if((send_size = us_mcu_uart_coder(send_ptr)) < 0){
 								us_dev_error(MCU_CONFIG, (unsigned char *)__func__, strlen(__func__)+1, send_size);
@@ -77,4 +53,25 @@ union odometry  	 		//里程计数据共用体
 			 }				 
 	 }	 //end while
  }	//end main
+ 
+ #ifdef  USE_FULL_ASSERT
+/**
+  * @brief  报告在检查参数发生错误时的源文件名和错误行数
+  * @param  file 源文件名
+  * @param  line 错误所在行数
+  * @retval None
+  */
+void assert_failed(uint8_t* file, uint32_t line)
+{
+    /* 用户可以增加自己的代码用于报告错误的文件名和所在行数,
+       例如:printf("错误参数值: 文件名 %s 在 %d行\r\n", file, line) */
+
+    /* 无限循环 */
+	while (1)
+	{
+		us_dev_error(MCU_CONFIG, (unsigned char *)file, strlen(file)+1, line);
+		sleep(1);
+	}
+}
+#endif
 

@@ -216,6 +216,39 @@ void USB_Interrupts_Config(void)
 }
 
 /*
+	A:PA2 PA3       PWM:PA6
+	B:PB8 PB9       PWM:PA0
+	C:PA9 PA10     PWM:PC6
+*/
+int SJS_MARM_Gpio_Init(void)
+{
+	int ret = 0;
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA |RCC_APB2Periph_GPIOB |RCC_APB2Periph_GPIOC |RCC_APB2Periph_AFIO , ENABLE);
+
+	/*GPIO A OUT !*/
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_3|GPIO_Pin_9|GPIO_Pin_10;	
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+
+	GPIO_InitStructure.GPIO_Pin 		= GPIO_Pin_8 |GPIO_Pin_9;                 	
+	GPIO_InitStructure.GPIO_Mode 	= GPIO_Mode_Out_PP;
+	GPIO_InitStructure.GPIO_Speed 	= GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB,&GPIO_InitStructure);
+
+
+	//GPIO_SetBits(GPIOA, GPIO_Pin_2);		//A
+	//GPIO_SetBits(GPIOB, GPIO_Pin_8);		//A
+	//GPIO_SetBits(GPIOA, GPIO_Pin_9);		//B C
+
+	return ret;
+}
+
+
+/*
 *********************************************************************************************************
 *	函 数 名: bsp_Init
 *	功能说明: 初始化硬件设备。只需要调用一次。该函数配置CPU寄存器和外设的寄存器并初始化一些全局变量。
@@ -232,13 +265,15 @@ void BSP_Configuration(void)
 	
 //NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 	RCC_Configuration();					//开启部分硬件时钟
-	
 	NVIC_Configuration();					//中断优先级配置
+	
 //	GPIO_Configuration();					//电机方向控制引脚配置
 	
 //	Set_USBClock(); 							//Set USB Clock
 //	USB_Init(); 									//USB Init	
 //	USB_Interrupts_Config();			//USB Interrupt Config
+	
+	SJS_MARM_Gpio_Init();
 
   UART1_Configuration(115200);	//串口初始化为115200
 	UART3_Configuration(115200);	//串口初始化为115200,获取传感器数据

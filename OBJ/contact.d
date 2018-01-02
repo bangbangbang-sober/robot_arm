@@ -2,7 +2,7 @@
 ..\obj\contact.o: ..\FUNCTION\contact.h
 ..\obj\contact.o: ..\USER\stm32f10x.h
 ..\obj\contact.o: ..\CORE\core_cm3.h
-..\obj\contact.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\contact.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
 ..\obj\contact.o: ..\USER\system_stm32f10x.h
 ..\obj\contact.o: ..\USER\stm32f10x_conf.h
 ..\obj\contact.o: ..\STM32F10x_FWLib\inc\stm32f10x_adc.h
@@ -30,8 +30,8 @@
 ..\obj\contact.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\contact.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\contact.o: ..\FUNCTION\PID.h
-..\obj\contact.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\contact.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 ..\obj\contact.o: ..\USER\stm32f10x_it.h
-..\obj\contact.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
-..\obj\contact.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\cstring
-..\obj\contact.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\string.h
+..\obj\contact.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
+..\obj\contact.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\cstring
+..\obj\contact.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\string.h

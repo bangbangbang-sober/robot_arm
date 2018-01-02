@@ -227,12 +227,116 @@ void TIM4_IRQHandler (void)//执行TIM4(电机A编码器采集)计数中断
     }
 }
 
+extern unsigned int A_Step_Set, A_Step_Num;
+extern unsigned int B_Step_Set, B_Step_Num;
+extern unsigned int C_Step_Set, C_Step_Num;
+
+extern u16 A_FREQ, B_FREQ, C_FREQ;
+extern u16 START_FREQ;
+
+u16 capture = 0;
+u16 Temp_A = 0, Temp_B = 0, Temp_C = 0;
+
 void TIM3_IRQHandler (void)//执行TIM3(电机B编码器采集)计数中断
 {  
-    TIM_ClearFlag(ENCODER1_TIMER, TIM_FLAG_Update);
-    if (hEncoder_Timer_Overflow1 != U16_MAX)//不超范围    
-    {
-        hEncoder_Timer_Overflow1++;	 
-    }
+   if (TIM_GetITStatus(TIM3, TIM_IT_CC1) != RESET)
+	{
+		TIM_ClearITPendingBit(TIM3, TIM_IT_CC1);
+		
+		if(A_Step_Set != 0){
+			u16 Step_now = START_FREQ+Temp_A*(MARM_VN-2);
+			
+			if((Step_now < A_FREQ) && (A_Step_Num < A_Step_Set/2)){
+				capture = TIM_GetCapture1(TIM3);
+				TIM_SetCompare1(TIM3, capture + MY_FREQ/Step_now);
+				Temp_A = A_Step_Num;
+				
+			}else if(A_Step_Num >= A_Step_Set - Temp_A){
+				capture = TIM_GetCapture1(TIM3);
+				TIM_SetCompare1(TIM3, capture + MY_FREQ/(Step_now - (A_Step_Num - (A_Step_Set - Temp_A))*(MARM_VN-2)));
+			}else{
+				capture = TIM_GetCapture1(TIM3);
+				TIM_SetCompare1(TIM3, capture + MY_FREQ/Step_now);
+			}
+
+			if(A_Step_Num > A_Step_Set){
+				A_Step_Set = 0;
+				A_Step_Num = 0;
+				Temp_A = 0;
+				sjs_marm_pwr(SJS_M_ARM_A, ROBOT_PWR_DIS);
+				sjs_marm_usb_send(SJS_MARM_CTRL, SJS_M_ARM_A, "MARM A", 7, A_Step_Set);
+			}
+			
+			A_Step_Num++;
+		}
+
+	}
+
+	if (TIM_GetITStatus(TIM3, TIM_IT_CC2) != RESET)
+	{
+		TIM_ClearITPendingBit(TIM3, TIM_IT_CC2);
+		
+		if(B_Step_Set != 0){
+			u16 Step_now = START_FREQ+Temp_B*MARM_VN;
+			
+			if((Step_now < B_FREQ) && (B_Step_Num < B_Step_Set/2)){
+				capture = TIM_GetCapture2(TIM3);
+				TIM_SetCompare2(TIM3, capture + MY_FREQ/Step_now);
+				Temp_B = B_Step_Num;
+				
+			}else if(B_Step_Num >= B_Step_Set - Temp_B){
+				capture = TIM_GetCapture2(TIM3);
+				TIM_SetCompare2(TIM3, capture + MY_FREQ/(Step_now - (B_Step_Num - (B_Step_Set - Temp_B))*MARM_VN));
+			}else{
+				capture = TIM_GetCapture2(TIM3);
+				TIM_SetCompare2(TIM3, capture + MY_FREQ/Step_now);
+			}
+
+			if(B_Step_Num > B_Step_Set){
+				B_Step_Set = 0;
+				B_Step_Num = 0;
+				Temp_B = 0;
+				sjs_marm_pwr(SJS_M_ARM_B, ROBOT_PWR_DIS);
+				sjs_marm_usb_send(SJS_MARM_CTRL, SJS_M_ARM_B, "MARM B", 7, B_Step_Set);
+			}
+			
+			B_Step_Num++;
+		}
+
+	}
+
+	
+	if (TIM_GetITStatus(TIM3, TIM_IT_CC3) != RESET)
+	{
+		TIM_ClearITPendingBit(TIM3, TIM_IT_CC3);
+		
+		if(C_Step_Set != 0){
+			u16 Step_now = START_FREQ+Temp_C*MARM_VN;
+			
+			if((Step_now < C_FREQ) && (C_Step_Num < C_Step_Set/2)){
+				capture = TIM_GetCapture3(TIM3);
+				TIM_SetCompare3(TIM3, capture + MY_FREQ/Step_now);
+				Temp_C = C_Step_Num;
+				
+			}else if(C_Step_Num >= C_Step_Set - Temp_C){
+				capture = TIM_GetCapture3(TIM3);
+				TIM_SetCompare3(TIM3, capture + MY_FREQ/(Step_now - (C_Step_Num - (C_Step_Set - Temp_C))*MARM_VN));
+			}else{
+				capture = TIM_GetCapture3(TIM3);
+				TIM_SetCompare3(TIM3, capture + MY_FREQ/Step_now);
+			}
+
+			if(C_Step_Num > C_Step_Set){
+				C_Step_Set = 0;
+				C_Step_Num = 0;
+				Temp_C = 0;
+				sjs_marm_pwr(SJS_M_ARM_C, ROBOT_PWR_DIS);
+				sjs_marm_usb_send(SJS_MARM_CTRL, SJS_M_ARM_C, "MARM C", 7, C_Step_Set);
+			}
+			
+			C_Step_Num++;
+		}
+
+	}
 }
 

@@ -364,7 +364,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\FUNCTION;..\STM32_USB-FS-Device_Driver\inc;..\USB\inc;..\HARDWARE\IIC;..\HARDWARE\MPU9250;..\iNEMO_AHRS_v121\inc;..\HARDWARE\TIMER;..\HARDWARE\ENCODER</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\FUNCTION;..\STM32_USB-FS-Device_Driver\inc;..\USB\inc;..\HARDWARE\IIC;..\HARDWARE\MPU9250;..\iNEMO_AHRS_v121\inc;..\HARDWARE\TIMER;..\HARDWARE\ENCODER;..\STM32_Cryptographic_Library\binary\MK-ARM;..\STM32_Cryptographic_Library\inc;..\STM32_Cryptographic_Library\inc\AES;..\STM32_Cryptographic_Library\inc\AES\CBC;..\STM32_Cryptographic_Library\inc\AES\CTR;..\STM32_Cryptographic_Library\inc\AES\Common</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -676,6 +676,36 @@
               <FileName>imu_uranus.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FUNCTION\imu_uranus.c</FilePath>
+            </File>
+            <File>
+              <FileName>libMCUAuthenticate.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FUNCTION\libMCUAuthenticate.c</FilePath>
+            </File>
+            <File>
+              <FileName>us_aes_func.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\FUNCTION\us_aes_func.c</FilePath>
+            </File>
+            <File>
+              <FileName>M3_CryptoFW_2_0_6.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\STM32_Cryptographic_Library\binary\MK-ARM\M3_CryptoFW_2_0_6.lib</FilePath>
+            </File>
+            <File>
+              <FileName>M3_CryptoFW_L1xx_2_0_6.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\STM32_Cryptographic_Library\binary\MK-ARM\M3_CryptoFW_L1xx_2_0_6.lib</FilePath>
+            </File>
+            <File>
+              <FileName>M3_CryptoFW_RngHW_2_0_6.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\STM32_Cryptographic_Library\binary\MK-ARM\M3_CryptoFW_RngHW_2_0_6.lib</FilePath>
+            </File>
+            <File>
+              <FileName>M3_CryptoHW_2_0_6.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\STM32_Cryptographic_Library\binary\MK-ARM\M3_CryptoHW_2_0_6.lib</FilePath>
             </File>
           </Files>
         </Group>

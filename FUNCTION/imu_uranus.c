@@ -63,7 +63,7 @@ int imu_rev_get_data(imu_data_t *imu_data)
 	imu_data->yaw = (rev_buf[22]<<8) + rev_buf[23];
 	imu_data->presure = (rev_buf[27]<<24) + (rev_buf[26]<<16) + (rev_buf[25]<<8) +(rev_buf[24]<<0);
 	
-//	printf("P/R/Y/P:%05d %05d %05d %05d \r\n",imu_data->pitch/100, imu_data->roll/100, imu_data->yaw/10, imu_data->presure);
+//	printf("P/R/Y/P:%05d %05d %05d \r\n",imu_data->pitch/100, imu_data->roll/100, imu_data->yaw/10);
 //	printf("acc->z:%05d \r",imu_data->accl[2]/100);
 	return 0;
 }
